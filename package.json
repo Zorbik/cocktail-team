@@ -1,11 +1,11 @@
 {
-  "name": "parcel-project-template",
+  "name": "cocktail-team",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://zorbik.github.io/goit-js-hw-11",
+  "homepage": "https://zorbik.github.io/cocktail-team",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-11/"
+    "build": "parcel build src/*.html --public-url /cocktail-team/"
   },
   "repository": {
     "type": "git",
