@@ -1,3 +1,86 @@
-<p>
-    header
-</p>
+<div class="header-box container">
+    <a class="logo" href="#">
+        <span class="logo__word">COCKTAILS</span>
+        <svg class="logo__svg" width="24" height="24">
+            <use href="#"></use>
+        </svg>
+    </a>
+    <nav class="navigation">
+    <ul class="navigation__list">
+        <li class="navigation__item">
+        <a href="#" class="navigation__link navigation__link--active">Home</a>
+        </li>
+        <li class="navigation__item">
+        <a href="#offerings" class="navigation__link">Favourite</a>
+        </li>
+    </ul>
+    </nav>
+    <form class="search-form" id="search-form">
+        <label class="search__label">
+            <button class="submit submit-js" type="submit">
+                <!-- <iconify-icon icon="bx:search"></iconify-icon> -->
+                <!-- <svg class="submit__icon" width="24" height="24">
+                  <use href="#"></use>
+                </svg> -->
+              </button>
+           
+            <input  class="search-input" type="text" name="searchQuery" placeholder="Search" />
+            <!-- <button type="submit" class="btn">Search</button> -->
+        </label>
+    </form>
+    <div class="switcher">
+        <p>Light</p>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        <p>Dark</p>
+    </div>
+    <div class="tablet__menu">
+        <button class="burger" type="button" onclick="openBurger()">
+            <svg class="burger__icon" width="28" height="28">
+            <use href="./images/symbol-defs.svg#icon-burger"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="mobile__menu">
+        <div class="switcher">
+            <p>Light</p>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            <p>Dark</p>
+        </div>
+        <button class="close" type="button" onclick="closeBurger()">
+            <svg class="close__icon" width="24" height="24">
+              <use href="./images/symbol-defs.svg#icon-cross"></use>
+            </svg>
+          </button>
+            <form class="mobile-search__form" id="search-form">
+                <label class="mobile-search__label">
+                    <button class="submit submit-js" type="submit">
+                        <!-- <iconify-icon icon="bx:search"></iconify-icon> -->
+                        <!-- <svg class="submit__icon" width="24" height="24">
+                        <use href="#"></use>
+                        </svg> -->
+                    </button>
+                
+                    <input  class="mobile-search__input" type="text" name="searchQuery" placeholder="Search" />
+                </label>
+            </form>
+            <ul class="mobile-navigation__list">
+                <li class="mobile-navigation__item">
+                <a href="#" class="mobile-navigation__link navigation__link--active">Home</a>
+                </li>
+                <li class="mobile-navigation__item">
+                <a href="#offerings" class="mobile-navigation__link">Favourite</a>
+                <button class="burger" type="button" onclick="">
+                    <svg class="burger__icon" width="28" height="28">
+                    <use href="#"></use>
+                    </svg>
+                </button>
+                </li>
+            </ul>
+    </div>
+</div>
