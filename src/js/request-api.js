@@ -2,14 +2,14 @@ import axios from 'axios';
 
 const BASE_URL = 'https://www.thecocktaildb.com/api/json/v1/1/';
 
+const getRequest = axios.create({
+  baseURL: `${BASE_URL}`,
+});
+
 //Функция возвращает рамдомный коктейль
 export async function getRandomCocktail() {
-  const getRequestRandomCocktail = axios.create({
-    baseURL: `${BASE_URL}/random.php`,
-    headers: { 'Content-Type': 'application/json' },
-  });
   try {
-    const response = await getRequestRandomCocktail.get();
+    const response = await getRequest('/random.php');
     return response.data.drinks[0];
   } catch (error) {
     console.log(error);
@@ -18,15 +18,12 @@ export async function getRandomCocktail() {
 
 //Функция возвращает коктейли по имени
 export async function getCocktailByName(name) {
-  const getRequestCocktailByName = axios.create({
-    baseURL: `${BASE_URL}/search.php`,
-    headers: { 'Content-Type': 'application/json' },
-    params: {
-      s: name,
-    },
-  });
   try {
-    const response = await getRequestCocktailByName.get();
+    const response = await getRequest('/search.php', {
+      params: {
+        s: name,
+      },
+    });
     return response.data;
   } catch (error) {
     console.log(error);
@@ -35,15 +32,12 @@ export async function getCocktailByName(name) {
 
 //Функция возвращает ингридиент по имени
 export async function getIngredientsByName(name) {
-  const getRequestIngredientsByName = axios.create({
-    baseURL: `${BASE_URL}/search.php`,
-    headers: { 'Content-Type': 'application/json' },
-    params: {
-      i: name,
-    },
-  });
   try {
-    const response = await getRequestIngredientsByName.get();
+    const response = await getRequest('/search.php', {
+      params: {
+        i: name,
+      },
+    });
     return response.data;
   } catch (error) {
     console.log(error);
@@ -52,15 +46,12 @@ export async function getIngredientsByName(name) {
 
 //Функция возвращает коктейли по букве
 export async function getCocktailByLetter(letter) {
-  const getRequestCocktailByLetter = axios.create({
-    baseURL: `${BASE_URL}/search.php`,
-    headers: { 'Content-Type': 'application/json' },
-    params: {
-      f: letter,
-    },
-  });
   try {
-    const response = await getRequestCocktailByLetter.get();
+    const response = await getRequest('/search.php', {
+      params: {
+        f: letter,
+      },
+    });
     return response.data;
   } catch (error) {
     console.log(error);
@@ -69,15 +60,12 @@ export async function getCocktailByLetter(letter) {
 
 //Функция возвращает коктейль по идентификатору
 export async function getCocktailById(id) {
-  const getRequestCocktailById = axios.create({
-    baseURL: `${BASE_URL}/lookup.php`,
-    headers: { 'Content-Type': 'application/json' },
-    params: {
-      i: id,
-    },
-  });
   try {
-    const response = await getRequestCocktailById.get();
+    const response = await getRequest('/lookup.php', {
+      params: {
+        i: id,
+      },
+    });
     return response.data;
   } catch (error) {
     console.log(error);
@@ -86,15 +74,12 @@ export async function getCocktailById(id) {
 
 //Функция возвращает ингридиент по идентификатору
 export async function getIngredientById(id) {
-  const getRequestIngredientById = axios.create({
-    baseURL: `${BASE_URL}/lookup.php`,
-    headers: { 'Content-Type': 'application/json' },
-    params: {
-      iid: id,
-    },
-  });
   try {
-    const response = await getRequestIngredientById.get();
+    const response = await getRequest('/lookup.php', {
+      params: {
+        iid: id,
+      },
+    });
     return response.data;
   } catch (error) {
     console.log(error);
