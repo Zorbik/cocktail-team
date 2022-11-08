@@ -37,8 +37,8 @@
 
 const openModalButton = document.querySelector('[data-modal-target]');
 const closeModalButton = document.querySelector('[data-close-button]');
-const overlay = document.getElementById('overlay');
 const gallery = document.querySelector('.gallery');
+const overlay = document.getElementById('overlay');
 
 gallery.addEventListener('click', onGalleryClick);
 overlay.addEventListener('click', onOverlayClick);
