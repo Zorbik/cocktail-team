@@ -21,7 +21,7 @@ $desktop: 1279.98px;
 @mixin pagination-num-style($name: Montserrat, $family: sans-serif) {
   font-family: $name, $family;
 }
-@mixin font-size($weight, $size, $height, $l-spacing) {
+@mixin font-size($weight, $size, $height, $l-spacing: 0.02em) {
   font-weight: $weight;
   font-size: $size;
   line-height: $height;
