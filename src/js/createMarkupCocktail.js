@@ -6,7 +6,7 @@ export function createMarkupCocktail(arrCocktails) {
     .map(({ strDrinkThumb, strDrink, idDrink }) => {
       return `
        <li class="gallery__item" data-id="${idDrink}">
-          <img class="gallery__img" src="${strDrinkThumb}" alt="" width="280" />
+          <img class="gallery__img" src="${strDrinkThumb}" alt="${strDrink}" width="280" />
           <div class="gallery__thumb">
             <p class="gallery__text">${strDrink}</p>
             <button class="gallery__info-btn btn data-id="${idDrink}" type="button">Learn more</button>
