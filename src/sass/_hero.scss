@@ -1,0 +1,130 @@
+.hero {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: relative;
+    height: auto;
+    @media screen and (min-width: $tablet) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+.hero_title {
+    @include page-titles-style;
+    @include font-size(600, 22px, 1.9);
+    color: $primary-color;
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 40px;
+        width: 342px;
+        @include font-size(600, 26px, 1.61);
+    }
+    @media screen and (min-width: $desktop) {
+        width: 688px;
+        @include font-size(600, 52px, 1.54);
+    }
+}
+.hero_img{
+    width: 280px;
+    height: 245px;
+    margin: 60px auto;
+    @media screen and (min-width: $tablet) {
+        width: 336px;
+        height: 294px;
+        margin: 0;
+        position: absolute;
+        right: 0;
+        bottom: 52px;
+    }
+    @media screen and (min-width: $desktop) {
+        width: 501px;
+        height: 439px;
+        top: 51px;
+    }
+}
+.hero_desc {
+    margin-bottom: 20px;
+    text-align: center;
+    @include page-titles-style;
+    @include font-size(500, 14px, 2);
+    color: #000000;
+    opacity: 0.8;
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 40px;
+        text-align: start;
+        color: $text-color;
+    }
+    @media screen and (min-width: $desktop) {
+        @include font-size(500, 18px, 1.56);
+    }
+}
+.hero_search_coctails {
+    width: 93px;
+    height: 24px;
+    margin: 0 auto;
+    padding: 5px 5px 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid $primary-color;
+    border-radius: 4px;
+    @include page-titles-style;
+    @include font-size(700, 16px, 1.35);
+    color: $primary-color;
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
+} 
+.hero_list {
+    width: 93px;
+    height: 84px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    overflow: scroll;
+    border: 1px solid $primary-color;
+    border-radius: 4px;
+    @media screen and (min-width: $tablet) {
+        margin: 0;
+        width: 324px;
+        height: auto;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        column-gap: 1px;
+        border: none;
+        overflow: visible;
+    }
+    @media screen and (min-width: $desktop) {
+        width: 520px;
+    }
+}
+.hero_item {
+    padding: 6px 18px 6px 10px;
+    @include page-titles-style;
+    @include font-size(700, 10px, 1.5);
+    color: $secondary-background-color;
+    text-decoration: none;
+    @media screen and (min-width: $tablet) {
+        width: 24px;
+        height: 25px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include font-size(700, 14px, 1.5);
+    }
+    @media screen and (min-width: $desktop) {
+        width: 39px;
+        height: 40px;
+        @include font-size(700, 24px, 1.5);
+    }
+}
+.hero_item_active {
+    @media screen and (min-width: $tablet) {
+        color: $primary-color;
+        -webkit-text-stroke: 1px $secondary-background-color;
+        text-shadow: 0px 4px 4px rgba(95, 103, 117, 0.25);
+    }
+}
+
