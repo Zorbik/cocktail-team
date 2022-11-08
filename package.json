@@ -1,11 +1,11 @@
 {
-  "name": "parcel-project-template",
+  "name": "cocktail-team",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://zorbik.github.io/goit-js-hw-11",
+  "homepage": "https://zorbik.github.io/cocktail-team",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-11/"
+    "build": "parcel build src/*.html --public-url /cocktail-team/"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "dependencies": {
-    "axios": "^1.1.2",
+    "axios": "^1.1.3",
     "infinite-scroll": "^4.0.1",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.5",
