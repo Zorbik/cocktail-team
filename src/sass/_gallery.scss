@@ -5,11 +5,9 @@
 .gallery__title {
   margin-top: 0;
   margin-bottom: 60px;
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 1.91;
+  @include font-size(600, 22px, 1.91, 0.02em);
   text-align: center;
-  color: #202025;
+  color: $text-color;
 }
 
 .gallery__list {
@@ -17,21 +15,20 @@
   padding: 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
   text-align: center;
   list-style: none;
 }
 
 .gallery__item {
-  min-width: 280px;
-  max-width: 320px;
-  border: 1px solid #fd5103;
+  width: 280px;
+  border: 1px solid $primary-color;
   border-radius: 4px;
-  //   margin-bottom: 20px;
 }
 
 .gallery__img {
   margin-bottom: 48px;
-  width: 280px;
   border-radius: 4px 4px 0px 0px;
 }
 
@@ -43,11 +40,9 @@
 .gallery__text {
   margin-top: 0;
   margin-bottom: 16px;
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 1.62;
+  @include font-size(900, 26px, 1.62, 0.02em);
   text-align: center;
-  color: #202025;
+  color: $text-color;
 }
 
 .gallery__info-btn {
@@ -55,14 +50,14 @@
   background: #fe7031;
   border-radius: 4px;
   text-align: center;
-  color: #ffffff;
-  border: 1px solid #fd5103;
+  color: $primary-background-color;
+  border: 1px solid $primary-color;
 }
 
 .gallery__add-btn {
   border-radius: 4px;
-  color: #fd5103;
-  border: 1px solid #fd5103;
+  color: $primary-color;
+  border: 1px solid $primary-color;
 }
 
 .btn {
@@ -70,8 +65,5 @@
   width: 108px;
   height: 40px;
   cursor: pointer;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.02em;
+  @include font-size(400, 14px, 1.71, 0.02em);
 }
