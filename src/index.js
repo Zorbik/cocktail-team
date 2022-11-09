@@ -1,8 +1,7 @@
 import { renderStartMarkup } from './js/renderStartMarkup';
-<<<<<<< Updated upstream
-=======
 import './js/modal';
-import'./js/header-mobile';
->>>>>>> Stashed changes
 
+import {onClickLetter} from './js/heroSearchByLetter';
 renderStartMarkup();
+
+import'./js/header-mobile';
