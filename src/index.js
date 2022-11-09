@@ -5,5 +5,5 @@ import {onClickLetter} from './js/heroSearchByLetter';
 
 renderStartMarkup();
 
-import'./js/header-mobile';
-
+import'./js/header/header-mobile';
+import'./js/header/headerSearchByName';
