@@ -22,7 +22,7 @@ function amountCards() {
   if (window.innerWidth < 768) {
     return 3;
   }
-  if (window.innerWidth < 1200) {
+  if (window.innerWidth < 1280) {
     return 6;
   }
   return 9;
