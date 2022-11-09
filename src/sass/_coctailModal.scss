@@ -1,3 +1,7 @@
+.modal-opened {
+    overflow: hidden;
+}
+
 .modal {
     position: fixed;
     top: 50%;
@@ -5,41 +9,22 @@
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
     border: 1px solid black;
-    border-radius: 10px;
-    z-index: 10;
+    z-index: 1;
     background-color: white;
     width: 500px;
     max-width: 80%
 }
 
+.modal__cocktail-close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: white;
+    border: none;
+}
+
 .modal.active {
     transform: translate(-50%, -50%) scale(1);
-}
-
-.modal__header {
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid black;
-}
-
-.modal__title {
-    font-size: 1.25rem;
-    font-weight: bold;
-}
-
-.modal__close-button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 1.25rem;
-    font-weight: bold;
-}
-
-.modal__body {
-    padding: 10px 15px;
 }
 
 #overlay {
@@ -57,4 +42,19 @@
 #overlay.active {
     opacity: 1;
     pointer-events: all;
+}
+
+
+
+.modal__coctail-button {
+    display: inline-block;
+    width: 108px;
+    height: 40px;
+    @include font-size(400, 14px, 1.71, 0.02em);
+    margin-right: 16px;
+    background: $primary-color;
+    border-radius: 4px;
+    text-align: center;
+    color: $primary-background-color;
+    border: 1px solid $primary-color;
 }
