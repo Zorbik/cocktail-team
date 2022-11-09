@@ -2,10 +2,8 @@ import sprite from '../images/symbol-defs.svg';
 import { checkIdCocktail } from './addFavoriteCocktail';
 
 export function createModalMarkupCocktail(arrCocktails) {
-  console.log(arrCocktails);
-  return arrCocktails
-    .map(({ strDrinkThumb, strDrink, idDrink }) => {
-      return `
+  const { strDrinkThumb, strDrink, idDrink } = arrCocktails[0];
+  return `
         <button class="modal__cocktail-close-button js-modal-coctail-close" type="button">
           <svg class="close__icon" width="32" height="32">
             <use href="${sprite}#icon-close-btn"></use>
@@ -31,8 +29,6 @@ export function createModalMarkupCocktail(arrCocktails) {
               </svg>
         </button>
     `;
-    })
-    .join('');
 }
 
 // <button class="modal__coctail-button gallery__add-btn btn" type="button" data-id="${idDrink}">Add to favourite</button>
