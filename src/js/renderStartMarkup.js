@@ -10,18 +10,20 @@ export async function renderStartMarkup() {
 
 function generateArrPromiseForStartMarkup() {
   let arr = [];
-  let calcGenerateCards;
-
-  if (window.innerWidth < 768) {
-    calcGenerateCards = 3;
-  } else if (window.innerWidth < 1200) {
-    calcGenerateCards = 6;
-  } else {
-    calcGenerateCards = 9;
-  }
+  const calcGenerateCards = amountCards();
 
   for (let i = 0; i < calcGenerateCards; i += 1) {
     arr.push(getRandomCocktail());
   }
   return arr;
+}
+
+function amountCards() {
+  if (window.innerWidth < 768) {
+    return 3;
+  }
+  if (window.innerWidth < 1200) {
+    return 6;
+  }
+  return 9;
 }

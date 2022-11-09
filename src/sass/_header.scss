@@ -260,7 +260,20 @@
     border:1px solid $primary-color;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.hover-item__navigation{
+.hover-item-cocktails__navigation{
+    padding-top: 12px;
+    padding-left: 12px;
+    width: 210px;
+    height: 48px;
+    @include page-titles-style;
+    @include font-size(400, 18px, 1.33, 0.02em);
+    color: $text-color;
+    cursor: pointer;
+    &:hover{
+        background-color: $primary-color;
+     }
+}
+.hover-item-ingredients__navigation{
     padding-top: 12px;
     padding-left: 12px;
     width: 210px;
