@@ -82,6 +82,7 @@
 
 .gallery__text {
   margin-bottom: 16px;
+  height: 75px;
   @include font-size(900, 26px, 1.62, 0.02em);
   text-align: center;
   color: $text-color;
