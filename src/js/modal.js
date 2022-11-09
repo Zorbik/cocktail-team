@@ -1,5 +1,6 @@
 import { getCocktailById } from './request-api';
 import { createModalMarkupCocktail } from './createModalCoctailMarkup';
+import { isFavorite } from './addFavoriteCocktail';
 
 const closeModalButton = document.querySelector('.js-modal-coctail-close');
 const modalCardEl = document.querySelector('#modal');
@@ -21,6 +22,10 @@ async function onGalleryClick(e) {
 
   const markup = createModalMarkupCocktail(coctail.drinks);
   modalCardEl.innerHTML = markup;
+
+  modalCardEl.addEventListener('click', e => {
+    isFavorite(e);
+  });
 }
 
 // function onCloseButtonClick() {
