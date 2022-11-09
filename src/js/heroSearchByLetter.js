@@ -5,6 +5,7 @@ const heroListEl = document.querySelector(".hero_list")
 const heroSelectEl = document.querySelector(".hero_select")
 const heroSearchCoctailsEl = document.querySelector(".hero_search_coctails")
 
+
 heroSearchCoctailsEl.addEventListener('click', e => {
     heroSearchCoctailsEl.classList.toggle('js_hero_search');
 })
@@ -20,7 +21,6 @@ export async function onClickLetter(e) {
         }
         e.target.classList.add('js_hero_item');
         const coctailsByLetter = await getCocktailByLetter(e.target.textContent);
-        console.log(coctailsByLetter);
         if(!coctailsByLetter.drinks) console.log('error');
         const markup = await createMarkupCocktail(coctailsByLetter.drinks);
         document.querySelector('.gallery__list').innerHTML = markup;
