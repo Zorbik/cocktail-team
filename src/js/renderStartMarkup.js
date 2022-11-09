@@ -1,11 +1,13 @@
 import { getRandomCocktail } from './request-api';
 import { createMarkupCocktail } from './createMarkupCocktail';
 
+export const gallery = document.querySelector('.gallery__list');
+
 export async function renderStartMarkup() {
   const arrPromise = generateArrPromiseForStartMarkup();
   const arrCocktails = await Promise.all([...arrPromise]);
   const markup = createMarkupCocktail(arrCocktails);
-  document.querySelector('.gallery__list').innerHTML = markup;
+  gallery.innerHTML = markup;
 }
 
 function generateArrPromiseForStartMarkup() {
@@ -18,7 +20,7 @@ function generateArrPromiseForStartMarkup() {
   return arr;
 }
 
-function amountCards() {
+export function amountCards() {
   if (window.innerWidth < 768) {
     return 3;
   }

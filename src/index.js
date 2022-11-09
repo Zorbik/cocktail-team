@@ -3,10 +3,7 @@ import './js/modal';
 import './js/addFavoriteCocktail';
 import { onClickLetter } from './js/heroSearchByLetter';
 
-import'./js/header/header-mobile';
-import'./js/header/headerSearchByName';
-
+import './js/header/header-mobile';
+import './js/header/headerSearchByName';
 
 renderStartMarkup();
-
-
