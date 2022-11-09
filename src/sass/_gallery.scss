@@ -164,4 +164,10 @@
   @media screen and(min-width: $desktop) {
     left: 96px;
   }
+
+  fill: $primary-background-color;
+}
+
+.icon__fill {
+  fill: $primary-color;
 }
