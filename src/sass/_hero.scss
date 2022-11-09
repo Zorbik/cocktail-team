@@ -96,6 +96,7 @@
     overflow-y: scroll;
     border: 1px solid $primary-color;
     border-radius: 4px;
+    background-color: $primary-background-color;
     @media screen and (min-width: $tablet) {
         margin: 0;
         width: 324px;
