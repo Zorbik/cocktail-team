@@ -9,7 +9,7 @@ export function createMarkupCocktail(arrCocktails) {
           <img class="gallery__img" src="${strDrinkThumb}" alt="${strDrink}" width="280" />
           <div class="gallery__thumb">
             <p class="gallery__text">${strDrink}</p>
-            <button class="gallery__info-btn btn data-id="${idDrink}" type="button">Learn more</button>
+            <button class="gallery__info-btn btn data-id="${idDrink}" type="button" data-modal-target="#modal">Learn more</button>
             <button class="gallery__add-btn btn data-id="${idDrink}" type="button">
               <span class="add-btn__desr">Add to</span>
               <svg class="add-btn__icon" width="18" height="18">
