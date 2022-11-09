@@ -1,3 +1,7 @@
+.modal-opened {
+    overflow: hidden;
+}
+
 .modal {
     position: fixed;
     top: 50%;
@@ -5,41 +9,23 @@
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
     border: 1px solid black;
-    border-radius: 10px;
-    z-index: 10;
+    z-index: 1;
     background-color: white;
     width: 500px;
-    max-width: 80%
+    max-width: 80%;
+    padding: 15px;
+}
+
+.modal__cocktail-close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: white;
+    border: none;
 }
 
 .modal.active {
     transform: translate(-50%, -50%) scale(1);
-}
-
-.modal__header {
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid black;
-}
-
-.modal__title {
-    font-size: 1.25rem;
-    font-weight: bold;
-}
-
-.modal__close-button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 1.25rem;
-    font-weight: bold;
-}
-
-.modal__body {
-    padding: 10px 15px;
 }
 
 #overlay {
@@ -58,3 +44,54 @@
     opacity: 1;
     pointer-events: all;
 }
+
+
+
+.modal__coctail-button {
+    display: inline-block;
+    // width: 108px;
+    // height: 40px;
+    @include font-size(400, 14px, 1.71, 0.02em);
+    margin-right: 16px;
+    background: $primary-color;
+    border-radius: 4px;
+    text-align: center;
+    color: $primary-background-color;
+    border: 1px solid $primary-color;
+}
+
+.modal__coctail-name{
+    @include title-products-style;
+    @include font-size(900, 32px, 1.19, 0.02em);
+    margin-bottom: 20px;
+}
+
+.modal__coctail-instractions{
+    @include page-titles-style;
+    @include font-size(600, 16px, 1.6, 0.02em);
+}
+
+.modal__coctail-description{
+    @include page-titles-style;
+    @include font-size(400, 16px, 1.8, 0.02em);
+    margin-bottom: 32px;
+}
+
+.modal__coctail-img{
+    width: 280px;
+    margin-bottom: 22px;
+}
+
+.modal__coctail-ingredients{
+    @include page-titles-style;
+    @include font-size(600, 16px, 1.5, 0.02em);
+}
+
+.modal__p{
+    @include page-titles-style;
+    @include font-size(300, 14px, 1.5, 0.02em);
+}
+
+
+
+
