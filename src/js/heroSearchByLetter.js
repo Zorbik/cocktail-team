@@ -1,5 +1,7 @@
 import { getCocktailByLetter } from './request-api';
 import { createMarkupCocktail } from './createMarkupCocktail';
+import { isFind, noFoundData } from './header/headerSearchByName';
+import { gallery } from './refs';
 
 const heroListEl = document.querySelector('.hero_list');
 const heroSelectEl = document.querySelector('.hero_select');
@@ -21,8 +23,11 @@ export async function onClickLetter(e) {
     e.target.classList.add('js_hero_item');
     const coctailsByLetter = await getCocktailByLetter(e.target.textContent);
     console.log(coctailsByLetter);
-    if (!coctailsByLetter.drinks) console.log('error');
-    const markup = await createMarkupCocktail(coctailsByLetter.drinks);
-    document.querySelector('.gallery__list').innerHTML = markup;
+    isFind(coctailsByLetter.drinks);
+    if (!coctailsByLetter.drinks) {
+      noFoundData(coctailsByLetter.drinks);
+    } else {
+      gallery.innerHTML = createMarkupCocktail(coctailsByLetter.drinks);
+    }
   }
 }

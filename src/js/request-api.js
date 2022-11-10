@@ -66,7 +66,7 @@ export async function getCocktailById(id) {
         i: id,
       },
     });
-    return response.data;
+    return response.data.drinks[0];
   } catch (error) {
     console.log(error);
   }

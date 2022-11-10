@@ -23,9 +23,7 @@ async function onGalleryClick(e) {
   console.log('123', e.target.dataset.id);
   const coctail = await getCocktailById(e.target.dataset.id);
 
-  console.log('asdasdasdadasdsadas', coctail.drinks);
-
-  const markup = await createModalMarkupCocktail(coctail.drinks);
+  const markup = await createModalMarkupCocktail(coctail);
 
   modalCardEl.innerHTML = markup;
 
@@ -38,10 +36,12 @@ function onClickModal(e) {
   onClickIngredient(e);
 }
 
-// function onCloseButtonClick() {
-//   closeModal(modalCardEl);
-//   console.log('azaz');
-// }
+function onCloseButtonCloseClick(e) {
+  // console.log(e.target.closest('.js-modal-coctail-close'));
+  if (e.target.closest('.js-modal-coctail-close')) {
+    closeModal(modalCardEl);
+  }
+}
 
 function onOverlayClick() {
   const modals = document.querySelectorAll('.modal.active');
@@ -60,4 +60,5 @@ function closeModal() {
   modalCardEl.classList.remove('active');
   overlay.classList.remove('active');
   body.classList.toggle('modal-opened');
+  removeEventListener('click', onClickModal);
 }

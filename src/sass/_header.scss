@@ -29,7 +29,7 @@
         right: 15px;
     }
     
-    .mobile__menu{
+    .mobile-menu{
        position: fixed;
        top: 0;
        left: 0;
@@ -43,7 +43,7 @@
        transform: translateX(-100%);
        transition: 0.4s ease;
     }
-    .mobile__menu.is-open{
+    .mobile-menu.is-open{
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
@@ -59,19 +59,19 @@
         margin-top: 91px;
 
     }
-    .mobile-navigation__list{
+    .mobile-menu__list{
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 32px;
         margin-top: 40px;
     }
-    .mobile-navigation__link{
+    .mobile-menu__link{
         @include font-size(400, 28px, 0.86, 0.02em);
         @include page-titles-style;
         
     }
-    .mobile-search__input{
+    .mobile-menu__input{
         width:100%;
         height: 40px;
         border: 1px solid $primary-color;
@@ -79,11 +79,11 @@
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1279px) {
     .navigation{
         display: none;
     } 
-    .mobile-search__form{
+    .mobile-menu__form{
         display: none;
     }
     .switcher{
@@ -94,7 +94,7 @@
         top: 10px;
         right: 15px;
     }
-    .mobile__menu{
+    .mobile-menu{
         position: fixed;
         top: 0;
         left: 0;
@@ -108,7 +108,7 @@
         transform: translateX(-100%);
         transition: 0.4s ease;
     }
-    .mobile__menu.is-open{
+    .mobile-menu.is-open{
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
@@ -130,7 +130,7 @@
         justify-content: space-between;
         padding-bottom: 40px;
     }
-    .mobile-navigation__list{
+    .mobile-menu__list{
         display: flex;
         flex-direction: column;
         padding-left: 326px;
@@ -144,21 +144,21 @@
     }
 }
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1280px){
     .header-box{
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding-bottom: 37px;
     }
-    .tablet__menu{
+    .tablet-menu{
         display: none;
 
     }
-    .mobile__menu{
+    .mobile-menu{
         display: none;
     }
-    .mobile-navigation__list{
+    .mobile-menu__list{
         display: none;
     }
     .navigation{
@@ -193,10 +193,10 @@
     align-items: center;
     padding-top: 20px;
 }
-.hover-mobile__navigation{
+.favourite-mobile{
     display: none;
 }
-.mobile-navigation__link{
+.mobile-menu__link{
     @include page-titles-style;
     @include font-size(400, 28px, 0.86, 0.02em);
     color: $text-color;
@@ -214,19 +214,19 @@
     background-color: transparent;
     border: none;
 }
-.submit__icon{
+.submit-btn__icon{
     border-color: transparent;
 }
 
-.mobile-navigation__link{
+.mobile-menu__link{
     position: relative;
     display: inline-block;
     &:hover
-        .hover__navigation{
+        .favourite{
             display: block;
         }
 }
-.hover-mobile__navigation{
+.favourite-mobile{
     display: none;
     position: absolute;
     z-index: 1;
@@ -240,7 +240,7 @@
     position: relative;
     display: inline-block;
     &:hover
-        .hover__navigation{
+        .favourite{
             display: block;
         }
 }
@@ -249,7 +249,7 @@
         color: $primary-color;
      }
 }
-.hover__navigation{
+.favourite{
     display: none;
     position: absolute;
     z-index: 1;
@@ -260,7 +260,7 @@
     border:1px solid $primary-color;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.hover-item-cocktails__navigation{
+.favourite__item-cocktails{
     padding-top: 12px;
     padding-left: 12px;
     width: 210px;
@@ -273,7 +273,7 @@
         background-color: $primary-color;
      }
 }
-.hover-item-ingredients__navigation{
+.favourite__item-ingredients{
     padding-top: 12px;
     padding-left: 12px;
     width: 210px;
@@ -308,10 +308,10 @@
 .search-form{
     position: relative;
 }
-.mobile-search__form{
+.mobile-menu__form{
     position: relative;
 }
-.mobile-search__input{
+.mobile-menu__input{
     padding-left: 48px;
 }
 

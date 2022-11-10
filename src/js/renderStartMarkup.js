@@ -1,7 +1,6 @@
 import { getRandomCocktail } from './request-api';
 import { createMarkupCocktail } from './createMarkupCocktail';
-
-export const gallery = document.querySelector('.gallery__list');
+import { gallery } from './refs';
 
 export async function renderStartMarkup() {
   const arrPromise = generateArrPromiseForStartMarkup();
