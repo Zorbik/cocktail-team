@@ -25,5 +25,7 @@ async function renderFavoriteCocktailsMarkup() {
     const arrCocktails = await Promise.all([...arrPromise]);
     // console.log('arrCocktails', arrCocktails);
     const markup = await createMarkupCocktail(arrCocktails);
-    document.querySelector('main').innerHTML = '<h2 class="title_cocktails">Favorite cocktails</h2>' + markup;
+    document.querySelector('.gallery__list').innerHTML = markup;
+    document.querySelector('.gallery__title').textContent = 'Favorite Cocktails';
+    document.querySelector('.hero').classList.add('js_hero_active');
 }
