@@ -21,7 +21,7 @@ export async function renderIngredientsMarkup(id) {
     const arrIngredients = Object.keys(cocktail);
     const markup = arrIngredients
       .map(el => {
-        return `<li data-ingredient="${el}">${cocktail[el]}${el}</li>`;
+        return `<li class="modal__ingredients-item" data-ingredient="${el}"><a class="modal__ingredient-link">${cocktail[el]}${el}</a></li>`;
       })
       .join('');
     return markup
