@@ -1,23 +1,29 @@
-import {getCocktailByLetter,getCocktailById} from './request-api'
+import {getCocktailById} from './request-api'
 import {createMarkupCocktail} from './createMarkupCocktail'
+
+const favoriteCocktailsEl = document.querySelector(".hover-item-cocktails__navigation")
+const favoriteIngredientsEl = document.querySelector(".hover-item-ingredients__navigation")
 
 const FAVORITE_COCKTAILS = 'favorite-cocktails';
 const favoriteCocktails = localStorage.getItem(FAVORITE_COCKTAILS);
-console.log("favoriteCocktails", favoriteCocktails);
- function generateArrPromiseForFavoriteCocktailsMarkup() {
+
+favoriteCocktailsEl.addEventListener('click', renderFavoriteCocktailsMarkup)
+
+function generateArrPromiseForFavoriteCocktailsMarkup() {
     let arr = JSON.parse(favoriteCocktails);
     let arrPromise = [];
 
     for (let i = 0; i < arr.length; i += 1) {
         arrPromise.push(getCocktailById(arr[i]));
     }
-    console.log('arrPromise', arrPromise);
+    // console.log('arrPromise', arrPromise);
     return arrPromise;
   }
-  async function renderFavoriteCocktailsMarkup() {
+
+async function renderFavoriteCocktailsMarkup() {
     const arrPromise = generateArrPromiseForFavoriteCocktailsMarkup();
     const arrCocktails = await Promise.all([...arrPromise]);
-    console.log('arrCocktails', arrCocktails);
-    const markup = createMarkupCocktail(arrCocktails);
-    document.querySelector('main').innerHTML = '<h2 class="title_ingredients">Favorite ingredients</h2>' + markup;
-  }
+    // console.log('arrCocktails', arrCocktails);
+    const markup = await createMarkupCocktail(arrCocktails);
+    document.querySelector('main').innerHTML = '<h2 class="title_cocktails">Favorite cocktails</h2>' + markup;
+}
