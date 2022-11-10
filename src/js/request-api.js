@@ -38,7 +38,7 @@ export async function getIngredientsByName(name) {
         i: name,
       },
     });
-    return response.data;
+    return response.data.ingredients[0];
   } catch (error) {
     console.log(error);
   }
