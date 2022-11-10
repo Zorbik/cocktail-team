@@ -20,7 +20,7 @@ async function onGalleryClick(e) {
   console.log(e.target.dataset.id);
   const coctail = await getCocktailById(e.target.dataset.id);
 
-  const markup = await createModalMarkupCocktail(coctail.drinks);
+  const markup = await createModalMarkupCocktail(coctail);
 
   modalCardEl.innerHTML = markup;
 

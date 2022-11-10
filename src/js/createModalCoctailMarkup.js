@@ -3,8 +3,9 @@ import { checkIdCocktail } from './addFavoriteCocktail';
 import { renderIngredientsMarkup } from './generateIngridientsList';
 
 export async function createModalMarkupCocktail(arrCocktails) {
-  const list = await renderIngredientsMarkup(arrCocktails[0].idDrink);
-  const { strDrinkThumb, strDrink, idDrink, strInstructions } = arrCocktails[0];
+  console.log('arrCocktails', arrCocktails);
+  const list = await renderIngredientsMarkup(arrCocktails.idDrink);
+  const { strDrinkThumb, strDrink, idDrink, strInstructions } = arrCocktails;
 
   return `
         <button class="modal__cocktail-close-button js-modal-coctail-close" type="button">
