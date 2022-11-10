@@ -10,15 +10,15 @@
         <li class="navigation__item thumb">
             <a href="#offerings" class="navigation__link ">Favourite</a>
             <ul class="favourite">
-                <li class="favourite__link-cocktails"><a href="#cocktails">Favorite cocktails</a></li>
-                <li class="favourite__link-ingredients"><a href="#ingredients">Favorite ingredients</a></li>
+                <li class="favourite__item-cocktails"><a class="favourite__link-cocktails js-favorite-cocktails" href="#favorite-cocktails">Favorite cocktails</a></li>
+                <li class="favourite__item-ingredients"><a class="favourite__link-ingredients js-favorite-ingredients" href="#favorite-ingredients">Favorite ingredients</a></li>
             </ul>
         </li>
     </ul>
     </nav>
     <form class="search-form" id="search-form">
             <button class="submit-btn submit-js" type="submit">
-                <svg class="submit__icon" width="24" height="24">
+                <svg class="submit-btn__icon" width="24" height="24">
                   <use href="./images/symbol-defs.svg#icon-search"></use>
                 </svg>
             </button>
@@ -32,14 +32,14 @@
           </label>
         <p>Dark</p>
     </div> -->
-    <div class="tablet__menu">
+    <div class="tablet-menu">
         <button class="burger js-open-menu" type="button" >
             <svg class="burger__icon" width="28" height="28">
             <use href="./images/symbol-defs.svg#icon-burger"></use>
             </svg>
         </button>
     </div>
-    <div class="mobile__menu js-menu-container">
+    <div class="mobile-menu js-menu-container">
         <!-- <div class="switcher">
             <p>Light</p>
             <label class="switch">
@@ -49,7 +49,7 @@
             <p>Dark</p>
         </div> -->
         <button class="close-btn js-close-menu" type="button" >
-            <svg class="close__icon" width="24" height="24">
+            <svg class="close-icon" width="24" height="24">
               <use href="./images/symbol-defs.svg#icon-close-btn"></use>
             </svg>
           </button>
@@ -57,26 +57,26 @@
             <img src="./images/logo.png" alt="logo" width="156" height="43">
           </a>
             <div class="mobile-menu__container">
-                <form class="mobile-search__form" id="search-form-mob">
+                <form class="mobile-menu__form" id="search-form-mob">
                         <button class="submit-btn submit-js" type="submit">
-                            <svg class="submit__icon" width="24" height="24">
+                            <svg class="submit-icon" width="24" height="24">
                                 <use href="./images/symbol-defs.svg#icon-search"></use>
                             </svg>
                         </button>
-                        <input  class="mobile-search__input" type="text" name="searchQuery" placeholder="Search" />
+                        <input  class="mobile-menu__input" type="text" name="searchQuery" placeholder="Search" />
                 </form>
-                <ul class="mobile-navigation__list">
-                    <li class="mobile-navigation__item">
-                    <a href="./index.html" class="mobile-navigation__link navigation__link--active">Home</a>
+                <ul class="mobile-menu__list">
+                    <li class="mobile-menu__item">
+                    <a href="./index.html" class="mobile-menu__link">Home</a>
                     </li>
-                    <li class="mobile-navigation__item thumb-mobile">
-                    <a href="#" class="mobile-navigation__link">Favourite</a>
+                    <li class="mobile-menu__item thumb-mobile">
+                    <a href="#" class="mobile-menu__link">Favourite</a>
                     <ul class="favourite-mobile">
-                        <li class="favourite-cocktails__link"><a href="#cocktails">Favorite cocktails</a></li>
-                        <li class = "favourite-ingredients__link"><a href="#ingredients">Favorite ingredients</a></li>
+                        <li class="favourite-mobile__item-cocktails"><a class="favourite-mobile__link-cocktails  js-favorite-cocktails" href="#favorite-cocktails">Favorite cocktails</a></li>
+                        <li class = "favourite-mobile__item-ingredients"><a class="favourite-mobile__link-ingredients js-favorite-ingredients" href="#favorite-ingredients">Favorite ingredients</a></li>
                     </ul>
                     <button class="more-btn" type="button" onclick="">
-                        <svg class="down__icon" width="28" height="28">
+                        <svg class="down-icon" width="28" height="28">
                         <use href="./images/symbol-defs.svg#icon-down-arrow"></use>
                         </svg>
                     </button>
