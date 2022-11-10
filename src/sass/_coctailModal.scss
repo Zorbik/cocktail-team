@@ -1,5 +1,7 @@
 .modal-opened {
+    position: relative;
     overflow: hidden;
+    height: 100vh;
 }
 
 .modal {
@@ -7,21 +9,37 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    transition: 200ms ease-in-out;
+    transition: $timing-function;
     border: 1px solid black;
     z-index: 1;
+
     background-color: white;
-    width: 500px;
-    max-width: 80%;
-    padding: 15px;
+    min-width: 320px;
+    // max-width: 80%;
+    padding: 32px 15px 15px;
+
+    max-height: 100vh;
+    overflow-y: auto;
+
+    @media screen and (min-width: $tablet) {
+        min-width: 822px;
+        padding: 40px 28px 28px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        min-width: 866px;
+    }
+
 }
+
 
 .modal__cocktail-close-button {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 10px;
+    right: 10px;
     background-color: white;
     border: none;
+    border-radius: 50%;
 }
 
 .modal.active {
@@ -48,50 +66,91 @@
 
 
 .modal__coctail-button {
+    @include font-size(400, 20px, 1.2, 0.02em);
+
     display: inline-block;
-    // width: 108px;
-    // height: 40px;
-    @include font-size(400, 14px, 1.71, 0.02em);
+    min-width: 185px;
+    min-height: 48px;
     margin-right: 16px;
     background: $primary-color;
     border-radius: 4px;
     text-align: center;
+
     color: $primary-background-color;
     border: 1px solid $primary-color;
+
+    @media screen and (min-width: $tablet) {
+        margin-left: 609px;
+    }
 }
 
-.modal__coctail-name{
+.modal__coctail-name {
     @include title-products-style;
     @include font-size(900, 32px, 1.19, 0.02em);
     margin-bottom: 20px;
+
+    @media screen and (min-width: $tablet) {
+        margin-left: 320px;
+    }
 }
 
-.modal__coctail-instractions{
+.modal__coctail-instractions {
     @include page-titles-style;
     @include font-size(600, 16px, 1.6, 0.02em);
+
+    margin-bottom: 20px;
 }
 
-.modal__coctail-description{
+.modal__coctail-description {
     @include page-titles-style;
     @include font-size(400, 16px, 1.8, 0.02em);
+
     margin-bottom: 32px;
 }
 
-.modal__coctail-img{
-    width: 280px;
+.modal__coctail-img {
+    min-width: 280px;
+    border-radius: 4px;
     margin-bottom: 22px;
+
+    @media screen and (min-width: $tablet) {
+        max-width: 288px;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 }
 
-.modal__coctail-ingredients{
+.modal__coctail-ingredients {
     @include page-titles-style;
     @include font-size(600, 16px, 1.5, 0.02em);
+
+    margin-bottom: 8px;
 }
 
-.modal__p{
+.modal__p {
     @include page-titles-style;
     @include font-size(300, 14px, 1.5, 0.02em);
+
+    margin-bottom: 8px;
 }
 
+.modal__wrapper {
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
 
+.modal__wrapper-ingredients {
+    @media screen and (min-width: $tablet) {
+        margin-left: 320px;
+    }
+}
 
-
+.modal__wrapper-instructions {
+    @media screen and (min-width: $tablet) {
+        margin-top: 100px;
+    }
+}
