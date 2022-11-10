@@ -1,87 +1,87 @@
 <div class="header-box container">
-    <a class="logo" href="#">
-        <span class="logo__word">COCKTAILS</span>
-        <svg class="logo__svg" width="24" height="24">
-            <use href="#"></use>
-        </svg>
+    <a class="logo" href="./index.html">
+       <img src="./images/logo.png" alt="logo" width="156" height="43">
     </a>
     <nav class="navigation">
     <ul class="navigation__list">
         <li class="navigation__item">
-        <a href="#" class="navigation__link navigation__link--active">Home</a>
+        <a href="./index.html" class="navigation__link navigation__link--active">Home</a>
         </li>
-        <li class="navigation__item">
-        <a href="#offerings" class="navigation__link">Favourite</a>
+        <li class="navigation__item thumb">
+            <a href="#offerings" class="navigation__link ">Favourite</a>
+            <ul class="hover__navigation">
+                <li class="hover-item-cocktails__navigation">Favorite cocktails</li>
+                <li class="hover-item-ingredients__navigation"><a href="#">Favorite ingredients</li>
+            </ul>
         </li>
     </ul>
     </nav>
     <form class="search-form" id="search-form">
-        <label class="search__label">
-            <button class="submit submit-js" type="submit">
-                <!-- <iconify-icon icon="bx:search"></iconify-icon> -->
-                <!-- <svg class="submit__icon" width="24" height="24">
-                  <use href="#"></use>
-                </svg> -->
-              </button>
-           
-            <input  class="search-input" type="text" name="searchQuery" placeholder="Search" />
-            <!-- <button type="submit" class="btn">Search</button> -->
-        </label>
+            <button class="submit-btn submit-js" type="submit">
+                <svg class="submit__icon" width="24" height="24">
+                  <use href="./images/symbol-defs.svg#icon-search"></use>
+                </svg>
+            </button>
+            <input  class="search-input" type="text" id="search-cocktails" name="searchQuery" placeholder="Search" />
     </form>
-    <div class="switcher">
+    <!-- <div class="switcher">
         <p>Light</p>
         <label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
           </label>
         <p>Dark</p>
-    </div>
+    </div> -->
     <div class="tablet__menu">
-        <button class="burger" type="button" onclick="openBurger()">
+        <button class="burger js-open-menu" type="button" >
             <svg class="burger__icon" width="28" height="28">
             <use href="./images/symbol-defs.svg#icon-burger"></use>
             </svg>
         </button>
     </div>
-    <div class="mobile__menu">
-        <div class="switcher">
+    <div class="mobile__menu js-menu-container">
+        <!-- <div class="switcher">
             <p>Light</p>
             <label class="switch">
                 <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             <p>Dark</p>
-        </div>
-        <button class="close" type="button" onclick="closeBurger()">
+        </div> -->
+        <button class="close-btn js-close-menu" type="button" >
             <svg class="close__icon" width="24" height="24">
-              <use href="#"></use>
+              <use href="./images/symbol-defs.svg#icon-close-btn"></use>
             </svg>
           </button>
-            <form class="mobile-search__form" id="search-form">
-                <label class="mobile-search__label">
-                    <button class="submit submit-js" type="submit">
-                        <!-- <iconify-icon icon="bx:search"></iconify-icon> -->
-                        <!-- <svg class="submit__icon" width="24" height="24">
-                        <use href="#"></use>
-                        </svg> -->
+          <a class="logo-tablet" href="./index.html">
+            <img src="./images/logo.png" alt="logo" width="156" height="43">
+          </a>
+            <div class="mobile-menu__container">
+                <form class="mobile-search__form" id="search-form">
+                        <button class="submit-btn submit-js" type="submit">
+                            <svg class="submit__icon" width="24" height="24">
+                                <use href="./images/symbol-defs.svg#icon-search"></use>
+                            </svg>
+                        </button>
+                        <input  class="mobile-search__input" type="text" name="searchQuery" placeholder="Search" />
+                </form>
+                <ul class="mobile-navigation__list">
+                    <li class="mobile-navigation__item">
+                    <a href="./index.html" class="mobile-navigation__link navigation__link--active">Home</a>
+                    </li>
+                    <li class="mobile-navigation__item thumb-mobile">
+                    <a href="#" class="mobile-navigation__link">Favourite</a>
+                    <ul class="hover-mobile__navigation">
+                        <li class="hover-item-cocktails__navigation">Favorite cocktails</li>
+                        <li class = "hover-item-ingredients__navigation">Favorite ingredients</li>
+                    </ul>
+                    <button class="more-btn" type="button" onclick="">
+                        <svg class="down__icon" width="28" height="28">
+                        <use href="./images/symbol-defs.svg#icon-down-arrow"></use>
+                        </svg>
                     </button>
-                
-                    <input  class="mobile-search__input" type="text" name="searchQuery" placeholder="Search" />
-                    <!-- <button type="submit" class="btn">Search</button> -->
-                </label>
-            </form>
-            <ul class="mobile-navigation__list">
-                <li class="mobile-navigation__item">
-                <a href="#" class="mobile-navigation__link navigation__link--active">Home</a>
-                </li>
-                <li class="mobile-navigation__item">
-                <a href="#offerings" class="mobile-navigation__link">Favourite</a>
-                <button class="burger" type="button" onclick="">
-                    <svg class="burger__icon" width="28" height="28">
-                    <use href="#"></use>
-                    </svg>
-                </button>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
     </div>
 </div>

@@ -82,6 +82,7 @@
 
 .gallery__text {
   margin-bottom: 16px;
+  height: 75px;
   @include font-size(900, 26px, 1.62, 0.02em);
   text-align: center;
   color: $text-color;
@@ -164,4 +165,15 @@
   @media screen and(min-width: $desktop) {
     left: 96px;
   }
+
+  fill: $primary-background-color;
+}
+
+.icon__fill {
+  fill: $primary-color;
+}
+
+.nofound__img {
+  min-width: 280px;
+  max-width: 380px;
 }
