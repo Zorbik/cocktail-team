@@ -9,7 +9,7 @@ formSubmit.addEventListener('submit', onSubmit);
 export async function onSubmit(e) {
   e.preventDefault();
 
-  searchQuery = e.target.elements.searchQuery.value.trim().toLowerCase();
+  const searchQuery = e.target.elements.searchQuery.value.trim().toLowerCase();
   if (!searchQuery) {
     console.log('empty');
     return;
