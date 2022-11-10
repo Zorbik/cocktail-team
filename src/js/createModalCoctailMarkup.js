@@ -2,7 +2,6 @@ import sprite from '../images/symbol-defs.svg';
 import { checkIdCocktail } from './addFavoriteCocktail';
 import { renderIngredientsMarkup } from './generateIngridientsList';
 
-
 export async function createModalMarkupCocktail(arrCocktails) {
   const list = await renderIngredientsMarkup(arrCocktails[0].idDrink);
   const { strDrinkThumb, strDrink, idDrink } = arrCocktails[0];

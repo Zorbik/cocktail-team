@@ -1,11 +1,13 @@
-
 import { getCocktailByName } from '../request-api';
 import { createMarkupCocktail } from '../createMarkupCocktail';
 import nofound from '../../images/nofound.png';
 import { menu } from './header-mobile';
+import { elem, gallery } from '../refs';
 
 const formSubmitMob = document.querySelector('#search-form-mob');
+const formSubmit = document.querySelector('#search-form');
 
+formSubmit.addEventListener('submit', onSubmit);
 formSubmitMob.addEventListener('submit', onSubmitMob);
 
 function onSubmitMob(e) {
@@ -14,17 +16,12 @@ function onSubmitMob(e) {
   menu();
 }
 
-
-const formSubmit = document.querySelector('#search-form');
-
-formSubmit.addEventListener('submit', onSubmit);
-
 function onSubmit(e) {
   e.preventDefault();
-  searchQuery(e); 
+  searchQuery(e);
 }
 
-async function searchQuery(e){
+async function searchQuery(e) {
   const searchQuery = e.target.elements.searchQuery.value.trim().toLowerCase();
   if (!searchQuery) {
     console.log('empty');
@@ -33,12 +30,11 @@ async function searchQuery(e){
   try {
     const data = await getCocktailByName(searchQuery);
     if (!data.drinks) {
-      const elem = document.querySelector('.gallery__wrap');
-      elem.firstElementChild.textContent = `Sorry, we didn't find any cocktail for you`;
-      elem.lastElementChild.innerHTML = `<img class="nofound__img" src="${nofound}" alt="not found image" />`;
+      isFind(data.drinks);
+      noFoundData(data.drinks);
     } else {
-      const markup = createMarkupCocktail(data.drinks);
-      document.querySelector('.gallery__list').innerHTML = markup;
+      isFind(data.drinks);
+      gallery.innerHTML = createMarkupCocktail(data.drinks);
     }
   } catch (error) {
   } finally {
@@ -46,3 +42,14 @@ async function searchQuery(e){
   }
 }
 
+export function isFind(array) {
+  if (!array) {
+    elem.firstElementChild.textContent = `Sorry, we didn't find any cocktail for you`;
+  } else {
+    elem.firstElementChild.textContent = `Cocktails`;
+  }
+}
+
+export function noFoundData(array) {
+  gallery.innerHTML = `<img class="nofound__img" src="${nofound}" alt="not found image" />`;
+}
