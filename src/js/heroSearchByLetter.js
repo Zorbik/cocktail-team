@@ -1,15 +1,15 @@
-import {getCocktailByLetter} from './request-api'
-import {createMarkupCocktail} from './createMarkupCocktail'
+import { getCocktailByLetter } from './request-api';
+import { createMarkupCocktail } from './createMarkupCocktail';
 
-const heroListEl = document.querySelector(".hero_list")
-const heroSelectEl = document.querySelector(".hero_select")
-const heroSearchCoctailsEl = document.querySelector(".hero_search_coctails")
+const heroListEl = document.querySelector('.hero_list');
+const heroSelectEl = document.querySelector('.hero_select');
+const heroSearchCoctailsEl = document.querySelector('.hero_search_coctails');
 
 
 heroSearchCoctailsEl.addEventListener('click', e => {
-    heroSearchCoctailsEl.classList.toggle('js_hero_search');
-})
-heroListEl.addEventListener('click', onClickLetter)
+  heroSearchCoctailsEl.classList.toggle('js_hero_search');
+});
+heroListEl.addEventListener('click', onClickLetter);
 
 export async function onClickLetter(e) {
     if(e.target.nodeName === "LI") {
@@ -24,5 +24,5 @@ export async function onClickLetter(e) {
         if(!coctailsByLetter.drinks) console.log('error');
         const markup = await createMarkupCocktail(coctailsByLetter.drinks);
         document.querySelector('.gallery__list').innerHTML = markup;
-    }
+  }
 }
