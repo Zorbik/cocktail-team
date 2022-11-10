@@ -1,14 +1,30 @@
+
 import { getCocktailByName } from '../request-api';
 import { createMarkupCocktail } from '../createMarkupCocktail';
 import nofound from '../../images/nofound.png';
+import { menu } from './header-mobile';
+
+const formSubmitMob = document.querySelector('#search-form-mob');
+
+formSubmitMob.addEventListener('submit', onSubmitMob);
+
+function onSubmitMob(e) {
+  e.preventDefault();
+  searchQuery(e);
+  menu();
+}
+
 
 const formSubmit = document.querySelector('#search-form');
 
 formSubmit.addEventListener('submit', onSubmit);
 
-export async function onSubmit(e) {
+function onSubmit(e) {
   e.preventDefault();
+  searchQuery(e); 
+}
 
+async function searchQuery(e){
   const searchQuery = e.target.elements.searchQuery.value.trim().toLowerCase();
   if (!searchQuery) {
     console.log('empty');
@@ -29,3 +45,4 @@ export async function onSubmit(e) {
     e.target.elements.searchQuery.value = '';
   }
 }
+
