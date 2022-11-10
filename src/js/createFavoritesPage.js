@@ -1,8 +1,8 @@
 import {getCocktailById} from './request-api'
 import {createMarkupCocktail} from './createMarkupCocktail'
 
-const favoriteCocktailsEl = document.querySelector(".hover-item-cocktails__navigation")
-const favoriteIngredientsEl = document.querySelector(".hover-item-ingredients__navigation")
+const favoriteCocktailsEl = document.querySelector(".js-favorite-cocktails")
+const favoriteIngredientsEl = document.querySelector(".js-favorite-ingredients")
 
 const FAVORITE_COCKTAILS = 'favorite-cocktails';
 const favoriteCocktails = localStorage.getItem(FAVORITE_COCKTAILS);
@@ -27,5 +27,5 @@ async function renderFavoriteCocktailsMarkup() {
     const markup = await createMarkupCocktail(arrCocktails);
     document.querySelector('.gallery__list').innerHTML = markup;
     document.querySelector('.gallery__title').textContent = 'Favorite Cocktails';
-    document.querySelector('.hero').classList.add('js_hero_active');
+    document.querySelector('.hero').classList.add('js_hero_hidden');
 }
