@@ -1,10 +1,12 @@
 import { getIngredientsByName } from './request-api';
 import { createModalMarkupCocktail } from './createModalIngredientsMarkup';
+import { onClickIngredient } from './addFavoriteIngredient';
 
 const modalIngredientEl = document.querySelector('#modal-ingredient');
 const overlayIngredient = document.querySelector('#overlay-ingredient');
 
 overlayIngredient.addEventListener('click', onOverlayIngredientClick);
+
 function onOverlayIngredientClick(e) {
   closeIngredientModal();
 }
@@ -14,7 +16,7 @@ export async function onClickIngredient(e) {
   openIngredientModal();
 
   const ingredient = await getIngredientsByName(`${e.target.dataset.ingredient}`);
-  console.log(ingredient);
+  // console.log(ingredient);
 
   const markup = await createModalMarkupCocktail(ingredient);
   modalIngredientEl.innerHTML = markup;
@@ -24,6 +26,11 @@ export async function onClickIngredient(e) {
 
 function onModalIngredientsClick(e) {
   onButtonCloseModalIngredient(e);
+  onButtonAddModalIngredient(e);
+}
+
+function onButtonAddModalIngredient(e) {
+  onClickIngredient(e);
 }
 
 function onButtonCloseModalIngredient(e) {
