@@ -12,7 +12,11 @@ export async function createModalMarkupCocktail(arrCocktails) {
   <h2 class="modal__ingredient-name">${strIngredient}</h2>
   <p class="modal__ingredient-type">${strType ? strType : ''}</p>
   <hr class="modal__ingredients-hr">
-  <p class="modal__ingredient-description">${strDescription ? strDescription : ''}</p>
+  <p class="modal__ingredient-description">${
+    strDescription
+      ? strDescription
+      : "unfortunately we did'nt find any info about this ingredient :-("
+  }</p>
   <ul class="modal__ingredient-info">
     <li>✶ <span modal__ingredient-item>Alcohol: ${strAlcohol ? strAlcohol : ''}</span></li>
   </ul>
