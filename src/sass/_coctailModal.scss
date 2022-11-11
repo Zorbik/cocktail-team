@@ -176,7 +176,14 @@
     @include page-titles-style;
     @include font-size(400, 16px, 1.6, 0.02em);
     color: $secondary-background-color;
+}
 
+.modal__ingredient-link{
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        text-decoration: underline;
+    }
 }
 
 .modal__coctail-ingredients-list {
