@@ -1,4 +1,5 @@
 import { STORAGE_KEY_INGREDIENT } from './refs';
+import { getLocalData } from './addFavoriteCocktail';
 
 export function onClickAddIngredient(e) {
   if (!e.target.classList.contains('gallery__add-btn')) return;
@@ -10,12 +11,8 @@ export function onClickAddIngredient(e) {
   }
 }
 
-function getLocalData() {
-  return JSON.parse(localStorage.getItem(STORAGE_KEY_INGREDIENT)) || [];
-}
-
 function onAddIngredient(elem) {
-  let arrIngredients = getLocalData();
+  let arrIngredients = getLocalData(STORAGE_KEY_INGREDIENT);
   arrIngredients.push(elem.dataset.id);
   localStorage.setItem(STORAGE_KEY_INGREDIENT, JSON.stringify(arrIngredients));
   //   console.log(elem.dataset.id);
@@ -24,7 +21,7 @@ function onAddIngredient(elem) {
 }
 
 function onRemoveIngredient(elem) {
-  let arrIngredients = getLocalData();
+  let arrIngredients = getLocalData(STORAGE_KEY_INGREDIENT);
   const index = checkIdIngredients(elem.dataset.id);
   if (index >= 0) {
     arrIngredients.splice(index, 1);
@@ -35,6 +32,6 @@ function onRemoveIngredient(elem) {
 }
 
 export function checkIdIngredients(id) {
-  let arrIngredients = getLocalData();
+  let arrIngredients = getLocalData(STORAGE_KEY_INGREDIENT);
   return arrIngredients.indexOf(id);
 }

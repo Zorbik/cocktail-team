@@ -1,5 +1,4 @@
 import { getCocktailByName } from '../request-api';
-import { createMarkupCocktail } from '../createMarkupCocktail';
 import nofound from '../../images/nofound.png';
 import { menu } from './header-mobile';
 import { elem, gallery } from '../refs';

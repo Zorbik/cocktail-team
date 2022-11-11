@@ -18,12 +18,12 @@ export function isFavorite(e) {
   }
 }
 
-export function getLocalData() {
-  return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+export function getLocalData(key) {
+  return JSON.parse(localStorage.getItem(key)) || [];
 }
 
 function onAdd(elem) {
-  let arrCocktails = getLocalData();
+  let arrCocktails = getLocalData(STORAGE_KEY);
   arrCocktails.push(elem.dataset.id);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(arrCocktails));
   console.log(elem.dataset.id);
@@ -32,8 +32,8 @@ function onAdd(elem) {
 }
 
 function onRemove(elem) {
-  let arrCocktails = getLocalData();
-  const index = checkIdCocktail(elem.dataset.id);
+  let arrCocktails = getLocalData(STORAGE_KEY);
+  const index = checkIdCocktail(STORAGE_KEY, elem.dataset.id);
   if (index >= 0) {
     arrCocktails.splice(index, 1);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(arrCocktails));
@@ -43,7 +43,6 @@ function onRemove(elem) {
   elem.lastElementChild.classList.remove('icon__fill');
 }
 
-export function checkIdCocktail(id) {
-  let arrCocktails = getLocalData();
-  return arrCocktails.indexOf(id);
+export function checkIdCocktail(key, id) {
+  return getLocalData(key).indexOf(id);
 }

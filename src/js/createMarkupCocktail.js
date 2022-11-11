@@ -1,5 +1,6 @@
 import sprite from '../images/symbol-defs.svg';
 import { checkIdCocktail } from './addFavoriteCocktail';
+import { STORAGE_KEY } from './refs';
 
 export function createMarkupCocktail(arrCocktails) {
   console.log(arrCocktails);
@@ -13,10 +14,10 @@ export function createMarkupCocktail(arrCocktails) {
             <button class="gallery__info-btn btn" data-id="${idDrink}" type="button" data-modal-target="#modal">Learn more</button>
             <button class="gallery__add-btn btn" data-id="${idDrink}" type="button">
               <span class="add-btn__desr">${
-                checkIdCocktail(idDrink) >= 0 ? 'Remove' : 'Add to'
+                checkIdCocktail(STORAGE_KEY, idDrink) >= 0 ? 'Remove' : 'Add to'
               }</span>
               <svg class="add-btn__icon ${
-                checkIdCocktail(idDrink) >= 0 ? 'icon__fill' : ''
+                checkIdCocktail(STORAGE_KEY, idDrink) >= 0 ? 'icon__fill' : ''
               }" width="18" height="18">
               <use href="${sprite}#icon-empty-heart"></use>
               </svg>

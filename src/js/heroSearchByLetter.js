@@ -1,7 +1,5 @@
 import { getCocktailByLetter } from './request-api';
-import { createMarkupCocktail } from './createMarkupCocktail';
 import { isFind, noFoundData } from './header/headerSearchByName';
-import { gallery } from './refs';
 import { pagination } from './renderSearchPage';
 
 const heroListEl = document.querySelector('.hero_list');
