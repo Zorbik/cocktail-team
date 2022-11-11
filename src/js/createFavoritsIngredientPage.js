@@ -3,14 +3,36 @@ import { getIngredientById } from './request-api';
 import { createMarkupIngredients } from './createMarkupIngredients';
 import { getLocalData } from './addFavoriteCocktail';
 import { openIngredientModal } from './modalEngredient';
+import { onAddIngredient, onRemoveIngredient } from './addFavoriteIngredient';
+import { onClickIngredient } from './modalEngredient';
 
-gallery.addEventListener('click', onClickBtn);
+gallery.addEventListener('click', onClickBtns);
 
-function onClickBtn(e) {
-  // console.log('e.target', e.target);
+function onClickBtns(e) {
+  if (!e.target.classList.contains('btn')) return;
 
-  if (e.target.nodeName !== 'BUTTON') return;
-  console.log('e.target', e.target);
+  if (e.target.closest('.ingredient-info__btn-add')) {
+    onClickBtnAdd(e);
+  } else {
+    onClickBtnInfo(e);
+  }
+}
+
+function onClickBtnInfo(e) {
+  // onClickIngredient(e);
+}
+
+function onClickBtnAdd(e) {
+  // if (!e.target.closest('.ingredient-info__btn-add')) return;
+  console.log('test', e.target);
+
+  if (e.target.classList.contains('icon-ingredients-fill')) {
+    onRemoveIngredient(e.target);
+  } else {
+    onAddIngredient(e.target);
+  }
+
+
 }
 
 function generateArrPromiseForFavoriteIngredientMarkup() {

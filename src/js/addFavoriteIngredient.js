@@ -4,6 +4,7 @@ import { getLocalData } from './addFavoriteCocktail';
 export function onClickAddIngredient(e) {
   if (!e.target.classList.contains('gallery__add-btn')) return;
   const targetEl = e.target;
+  console.log('test', e.target);
   if (e.target.classList.contains('icon-ingredients-fill')) {
     onRemoveIngredient(targetEl);
   } else {
@@ -11,17 +12,23 @@ export function onClickAddIngredient(e) {
   }
 }
 
-function onAddIngredient(elem) {
+
+export function onAddIngredient(elem) {
+  // console.log('Dobavili');
   let arrIngredients = getLocalData(STORAGE_KEY_INGREDIENT);
   arrIngredients.push(elem.dataset.id);
   localStorage.setItem(STORAGE_KEY_INGREDIENT, JSON.stringify(arrIngredients));
-  //   console.log(elem.dataset.id);
+  console.log(elem.dataset.id);
+
+
   elem.textContent = 'Remove';
   elem.classList.add('icon-ingredients-fill');
 }
 
-function onRemoveIngredient(elem) {
+export function onRemoveIngredient(elem) {
+  // console.log('Udalili');
   let arrIngredients = getLocalData(STORAGE_KEY_INGREDIENT);
+
   const index = checkIdIngredients(elem.dataset.id);
   if (index >= 0) {
     arrIngredients.splice(index, 1);
