@@ -1,10 +1,11 @@
-import { elem, gallery, STORAGE_KEY_INGREDIENT } from './refs';
+import { elem, gallery, STORAGE_KEY_INGREDIENT, modalIngredientEl } from './refs';
 import { getIngredientById } from './request-api';
 import { createMarkupIngredients } from './createMarkupIngredients';
 import { getLocalData } from './addFavoriteCocktail';
 import { openIngredientModal } from './modalEngredient';
 import { onAddIngredient, onRemoveIngredient } from './addFavoriteIngredient';
-import { onClickIngredient } from './modalEngredient';
+import { openIngredientModal, onButtonCloseModalIngredient } from './modalEngredient';
+import { createModalMarkupCocktail } from './createModalIngredientsMarkup';
 
 gallery.addEventListener('click', onClickBtns);
 
@@ -18,21 +19,20 @@ function onClickBtns(e) {
   }
 }
 
-function onClickBtnInfo(e) {
-  // onClickIngredient(e);
+async function onClickBtnInfo(e) {
+  openIngredientModal();
+  const ingredient = await getIngredientById(e.target.dataset.id);
+  modalIngredientEl.innerHTML = createModalMarkupCocktail(ingredient);
+
+  modalIngredientEl.addEventListener('click', onButtonCloseModalIngredient);
 }
 
 function onClickBtnAdd(e) {
-  // if (!e.target.closest('.ingredient-info__btn-add')) return;
-  console.log('test', e.target);
-
   if (e.target.classList.contains('icon-ingredients-fill')) {
     onRemoveIngredient(e.target);
   } else {
     onAddIngredient(e.target);
   }
-
-
 }
 
 function generateArrPromiseForFavoriteIngredientMarkup() {

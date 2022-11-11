@@ -1,9 +1,7 @@
 import { getIngredientsByName } from './request-api';
 import { createModalMarkupCocktail } from './createModalIngredientsMarkup';
 import { onClickAddIngredient } from './addFavoriteIngredient';
-
-const modalIngredientEl = document.querySelector('#modal-ingredient');
-const overlayIngredient = document.querySelector('#overlay-ingredient');
+import { modalIngredientEl, overlayIngredient } from './refs';
 
 overlayIngredient.addEventListener('click', onOverlayIngredientClick);
 
@@ -33,7 +31,7 @@ function onButtonAddModalIngredient(e) {
   onClickAddIngredient(e);
 }
 
-function onButtonCloseModalIngredient(e) {
+export function onButtonCloseModalIngredient(e) {
   if (e.target.closest('.modal__cocktail-close-button')) {
     closeIngredientModal();
   }

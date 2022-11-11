@@ -1,7 +1,7 @@
 import sprite from '../images/symbol-defs.svg';
 import { checkIdIngredients } from './addFavoriteIngredient';
 
-export async function createModalMarkupCocktail(arrCocktails) {
+export function createModalMarkupCocktail(arrCocktails) {
   const { idIngredient, strIngredient, strType, strAlcohol, strDescription } = arrCocktails;
   return `
         <button type="button" class="modal__cocktail-close-button">
