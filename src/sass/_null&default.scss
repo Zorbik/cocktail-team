@@ -34,5 +34,8 @@ button {
 
 body {
   background-color: $primary-background-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   // @include page-titles-style;
 }
