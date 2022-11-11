@@ -3,7 +3,7 @@ import { checkIdCocktail } from './addFavoriteCocktail';
 import { renderIngredientsMarkup } from './generateIngridientsList';
 
 export async function createModalMarkupCocktail(arrCocktails) {
-  console.log('arrCocktails', arrCocktails);
+  // console.log('arrCocktails', arrCocktails);
   const list = await renderIngredientsMarkup(arrCocktails.idDrink);
   const { strDrinkThumb, strDrink, idDrink, strInstructions } = arrCocktails;
 
