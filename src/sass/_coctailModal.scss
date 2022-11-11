@@ -13,7 +13,7 @@
     border-radius: 4px;
     z-index: 1;
     background-color: white;
-    // min-width: 80%;
+    
     max-height: 100vh;
     overflow-y: scroll;
 
@@ -24,6 +24,7 @@
 
     @media screen and (min-width: $tablet) {
         width: $tablet;
+        min-height: 598px;
         padding: 40px 28px 28px;
     }
 
@@ -113,7 +114,11 @@
     @include font-size(400, 16px, 1.8, 0.02em);
     color: $secondary-background-color;
 
-    margin-bottom: 30px;
+    @media screen and (max-width: $tablet) {
+        margin-bottom: 30px;
+        // height: 130px;
+        // overflow-y: scroll;
+    }
 
     @media screen and (min-width: $tablet) {
         margin-bottom: 40px;    
