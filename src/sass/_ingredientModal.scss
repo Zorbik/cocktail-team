@@ -10,26 +10,25 @@
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
     transition: $timing-function;
-    border: 1px solid black;
+    border-radius: 4px;
     z-index: 300;
-   
-
-    background-color: white;
-    min-width: 320px;
-    // max-width: 80%;
-    min-height: 600px;
-    padding: 32px 15px 15px;
 
     max-height: 100vh;
     overflow-y: auto;
+   
 
-    @media screen and (min-width: $tablet) {
-        min-width: 822px;
-        padding: 40px 28px 28px;
+    background-color: white;
+
+    @media screen and (max-width: $tablet) {
+        width: 320px;
+        min-height: 673px;
+        padding: 40px 20px;
     }
 
-    @media screen and (min-width: $desktop) {
-        min-width: 866px;
+    @media screen and (min-width: $tablet) {
+        width: $tablet;
+        min-height: 537px;
+        padding: 40px 28px;
     }
 
 }
@@ -47,7 +46,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(206, 29, 29, 0.5);
+    background-color: rgba(0, 0, 0, .3);
     pointer-events: none;
 }
 
@@ -56,3 +55,72 @@
     pointer-events: all;
     z-index: 2;
 }
+
+.modal__ingredient-name{
+    @include title-products-style;
+    @include font-size(900, 32px, 1.19, 0.02em);
+    margin-bottom: 20px;
+        
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 28px;
+    }
+}
+
+.modal__ingredient-type{
+    @include page-titles-style;
+    @include font-size(600, 16px, 1.6, 0.02em);
+        
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 40px;    
+    }
+}
+
+.modal__ingredient-description {
+    @include page-titles-style;
+    @include font-size(400, 16px, 1.8, 0.02em);
+    color: $secondary-background-color;
+
+    @media screen and (max-width: $tablet) {
+        height: 300px;
+        overflow-y: scroll;
+        margin-bottom: 28px;
+    }
+
+    @media screen and (min-width: $tablet) {
+        height: 200px;
+        overflow-y: scroll;
+        margin-bottom: 28px;
+    }
+
+
+}
+
+.modal__ingredient-info {
+    @include page-titles-style;
+    @include font-size(400, 16px, 1.6, 0.02em);
+    color: $secondary-background-color;
+
+    @media screen and (max-width: $tablet) {
+        margin-bottom: 32px;
+    }
+
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 40px;
+    }
+}
+
+.modal__ingredients-hr {
+    @media screen and (max-width: $tablet) {
+        display: none;
+    }
+
+    @media screen and (min-width: $tablet) {
+        margin-left: -28px;
+        margin-right: -28px;
+        margin-bottom: 28px;
+        border-top: 1px solid $primary-color;
+    }
+}
+

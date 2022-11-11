@@ -17,7 +17,7 @@ export async function createModalMarkupCocktail(arrCocktails) {
         <h2 class="modal__coctail-name">${strDrink}</h2>
         <div class="modal__wrapper">
         <div class="modal__wrapper-instructions">
-        <p class="modal__coctail-instractions">INSTRACTIONS:</p>
+        <p class="modal__coctail-instractions">INSTRUCTIONS:</p>
         <p class="modal__coctail-description">${strInstructions}</p>
         </div>
         <img class="modal__coctail-img" src="${strDrinkThumb}" alt="${strDrink}" />
