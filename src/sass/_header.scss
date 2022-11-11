@@ -193,9 +193,7 @@
     align-items: center;
     padding-top: 20px;
 }
-.favourite-mobile{
-    display: none;
-}
+
 .mobile-menu__link{
     @include page-titles-style;
     @include font-size(400, 28px, 0.86, 0.02em);
@@ -218,8 +216,20 @@
     border-color: transparent;
 }
 
-.mobile-menu__link{
+.mobile-menu__item {
     position: relative;
+    width: 220px;
+    transition: display 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu__item:hover .favourite-mobile,
+.mobile-menu__item:hover .favourite-mobile {
+    display: block;
+    transition: display 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu__link{
+    // position: relative;
     display: inline-block;
     &:hover
         .favourite{
@@ -229,12 +239,45 @@
 .favourite-mobile{
     display: none;
     position: absolute;
-    z-index: 1;
+    // z-index: 1;
     left: 0;
-    top: 100%;
+    top: 20px;
+    padding-top: 20px;
+    
+}
+
+.favourite-mobile__inner {
+    // padding: 10px;
     border:1px solid $primary-color;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.favourite-mobile__item-cocktails {
+    padding: 10px;    
+    @include font-size(400, 20px, 0.86, 0.02em);
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &focus {
+        background: $primary-color;
+        color: $primary-background-color;
+    }
+}
+
+.favourite-mobile__item-ingredients {
+    padding: 10px;
+    @include font-size(400, 20px, 0.86, 0.02em);
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &focus {
+        background: $primary-color;
+        color: $primary-background-color;
+    }
+}
+
 .thumb{
     // margin-bottom: 8px;
     position: relative;
