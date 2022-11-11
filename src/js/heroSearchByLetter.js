@@ -2,6 +2,7 @@ import { getCocktailByLetter } from './request-api';
 import { createMarkupCocktail } from './createMarkupCocktail';
 import { isFind, noFoundData } from './header/headerSearchByName';
 import { gallery } from './refs';
+import { pagination } from './renderSearchPage';
 
 const heroListEl = document.querySelector('.hero_list');
 const heroSelectEl = document.querySelector('.hero_select');
@@ -27,7 +28,7 @@ export async function onClickLetter(e) {
     if (!coctailsByLetter.drinks) {
       noFoundData(coctailsByLetter.drinks);
     } else {
-      gallery.innerHTML = createMarkupCocktail(coctailsByLetter.drinks);
+      pagination(coctailsByLetter.drinks);
     }
   }
 }

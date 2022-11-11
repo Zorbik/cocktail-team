@@ -133,12 +133,12 @@
 .gallery__info-btn:hover,
 .gallery__info-btn:focus {
   color: $primary-color;
-  background: #F5F5F5;
+  background: #f5f5f5;
 }
 
 .gallery__info-btn:active {
   background: $primary-color;
-  color:$primary-background-color;
+  color: $primary-background-color;
 }
 
 .gallery__add-btn {
@@ -164,8 +164,7 @@
 
 .gallery__add-btn:hover,
 .gallery__add-btn:focus {
-  background: #F5F5F5;
-  
+  background: #f5f5f5;
 }
 
 .gallery__add-btn:active {
@@ -202,4 +201,51 @@
 .nofound__img {
   min-width: 280px;
   max-width: 380px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+  margin-top: 30px;
+  @include pagination-num-style;
+  @include font-size(700, 16px, 1.5);
+}
+.numPage {
+  display: flex;
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+  border: 3px solid $primary-color;
+  justify-content: center;
+  align-items: center;
+  &.active {
+    background-color: $primary-color;
+    color: $primary-background-color;
+  }
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+  transition: transform 250ms linear;
+  cursor: pointer;
+}
+.decr-arrow,
+.incr-arrow {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+  border-top: 4px solid $primary-color;
+  border-right: 4px solid $primary-color;
+  cursor: pointer;
+}
+.decr-arrow {
+  transform: rotate(-135deg);
+}
+.incr-arrow {
+  transform: rotate(45deg);
 }

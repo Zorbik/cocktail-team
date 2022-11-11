@@ -3,6 +3,7 @@ import { createMarkupCocktail } from '../createMarkupCocktail';
 import nofound from '../../images/nofound.png';
 import { menu } from './header-mobile';
 import { elem, gallery } from '../refs';
+import { pagination } from '../renderSearchPage';
 
 const formSubmitMob = document.querySelector('#search-form-mob');
 const formSubmit = document.querySelector('#search-form');
@@ -34,7 +35,7 @@ async function searchQuery(e) {
       noFoundData(data.drinks);
     } else {
       isFind(data.drinks);
-      gallery.innerHTML = createMarkupCocktail(data.drinks);
+      pagination(data.drinks);
     }
   } catch (error) {
   } finally {
@@ -52,4 +53,5 @@ export function isFind(array) {
 
 export function noFoundData(array) {
   gallery.innerHTML = `<img class="nofound__img" src="${nofound}" alt="not found image" />`;
+  elem.lastElementChild.innerHTML = '';
 }

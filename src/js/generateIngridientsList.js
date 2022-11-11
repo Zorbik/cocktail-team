@@ -23,7 +23,7 @@ export async function renderIngredientsMarkup(id) {
     .map(el => {
       return `<li class="modal__ingredients-item" data-ingredient="${el}"><a data-ingredient="${el}" class="modal__ingredient-link">${
         cocktail[el] ? cocktail[el] : ''
-      }${el}</a></li>`;
+      } ${el}</a></li>`;
     })
     .join('');
   return markup;
