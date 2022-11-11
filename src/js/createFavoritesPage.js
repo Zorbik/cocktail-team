@@ -4,7 +4,6 @@ import { elem, gallery, STORAGE_KEY } from './refs';
 import { getLocalData } from './addFavoriteCocktail';
 
 const favoriteCocktailsEl = document.querySelector('.js-favorite-cocktails');
-const favoriteIngredientsEl = document.querySelector('.js-favorite-ingredients');
 
 favoriteCocktailsEl.addEventListener('click', renderFavoriteCocktailsMarkup);
 
@@ -29,6 +28,6 @@ export async function renderFavoriteCocktailsMarkup() {
   elem.firstElementChild.textContent = 'Favorite Cocktails';
 }
 
-export function noFoundFavorit() {
+function noFoundFavorit() {
   gallery.textContent = `You haven't added any favorite cocktails yet`;
 }
