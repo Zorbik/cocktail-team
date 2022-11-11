@@ -1,6 +1,6 @@
 const STORAGE_KEY = 'favorite-ingredients';
 
-export function onClickIngredient(e) {
+export function onClickAddIngredient(e) {
   if (!e.target.classList.contains('gallery__add-btn')) return;
   const targetEl = e.target;
   if (e.target.classList.contains('icon-ingredients-fill')) {

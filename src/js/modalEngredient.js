@@ -1,6 +1,6 @@
 import { getIngredientsByName } from './request-api';
 import { createModalMarkupCocktail } from './createModalIngredientsMarkup';
-import { onClickIngredient } from './addFavoriteIngredient';
+import { onClickAddIngredient } from './addFavoriteIngredient';
 
 const modalIngredientEl = document.querySelector('#modal-ingredient');
 const overlayIngredient = document.querySelector('#overlay-ingredient');
@@ -30,7 +30,7 @@ function onModalIngredientsClick(e) {
 }
 
 function onButtonAddModalIngredient(e) {
-  onClickIngredient(e);
+  onClickAddIngredient(e);
 }
 
 function onButtonCloseModalIngredient(e) {
