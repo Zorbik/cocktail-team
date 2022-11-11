@@ -39,7 +39,7 @@ function onButtonCloseModalIngredient(e) {
   }
 }
 
-function openIngredientModal() {
+export function openIngredientModal() {
   // console.log(modalIngredientEl);
   modalIngredientEl.classList.add('active');
   overlayIngredient.classList.add('active');

@@ -3,6 +3,7 @@ import { checkIdCocktail } from './addFavoriteCocktail';
 import { STORAGE_KEY_INGREDIENT } from './refs';
 import { checkIdIngredients } from './addFavoriteIngredient';
 
+
 export function createMarkupIngredients(array) {
   console.log(array);
   return array

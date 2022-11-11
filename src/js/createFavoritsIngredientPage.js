@@ -31,6 +31,8 @@ function onClickBtnAdd(e) {
   } else {
     onAddIngredient(e.target);
   }
+
+
 }
 
 function generateArrPromiseForFavoriteIngredientMarkup() {
