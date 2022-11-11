@@ -2,6 +2,8 @@
     const mobileMenu = document.querySelector('.js-menu-container');
     const openMenuBtn = document.querySelector('.js-open-menu');
     const closeMenuBtn = document.querySelector('.js-close-menu');
+    const favIngredientsRef = document.querySelector('.favourite-mobile__item-ingredients');
+    const favCocktailsRef = document.querySelector('.favourite-mobile__item-cocktails');
 
     const toggleMenu = () => {
         const isMenuOpen =
@@ -15,6 +17,14 @@
         document.body.style.overflow = 'hidden';
     });
     closeMenuBtn.addEventListener('click', () => {
+        toggleMenu();
+        document.body.style.overflow = '';
+    });
+    favCocktailsRef.addEventListener('click', ()=> {
+        toggleMenu();
+        document.body.style.overflow = '';
+    });
+    favIngredientsRef.addEventListener('click', ()=> {
         toggleMenu();
         document.body.style.overflow = '';
     });
