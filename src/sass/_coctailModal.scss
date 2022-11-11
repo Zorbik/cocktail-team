@@ -16,7 +16,7 @@
     background-color: white;
     min-width: 320px;
     // max-width: 80%;
-    padding: 32px 15px 15px;
+    padding: 40px 20px;
 
     max-height: 100vh;
     overflow-y: auto;
@@ -35,8 +35,8 @@
 
 .modal__cocktail-close-button {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 16px;
+    right: 16px;
     background-color: white;
     border: none;
     border-radius: 50%;
@@ -104,14 +104,15 @@
 .modal__coctail-description {
     @include page-titles-style;
     @include font-size(400, 16px, 1.8, 0.02em);
+    color: $secondary-background-color;
 
-    margin-bottom: 32px;
+    margin-bottom: 30px;
 }
 
 .modal__coctail-img {
     min-width: 280px;
     border-radius: 4px;
-    margin-bottom: 22px;
+    margin-bottom: 24px;
 
     @media screen and (min-width: $tablet) {
         max-width: 288px;
@@ -153,4 +154,15 @@
     @media screen and (min-width: $tablet) {
         margin-top: 100px;
     }
+}
+
+.modal__ingredients-item {
+    @include page-titles-style;
+    @include font-size(400, 16px, 1.6, 0.02em);
+    color: $secondary-background-color;
+
+}
+
+.modal__coctail-ingredients-list {
+    margin-bottom: 32px;
 }
