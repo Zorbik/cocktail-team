@@ -12,6 +12,7 @@ let countPage = 0;
 let page = 1;
 
 export function pagination(array) {
+  page = 1;
   paginationArray = array;
   cardsPerPage = amountCards();
   countPage = Math.ceil(array.length / cardsPerPage);

@@ -1,6 +1,7 @@
 import sprite from '../images/symbol-defs.svg';
 import { checkIdCocktail } from './addFavoriteCocktail';
 import { renderIngredientsMarkup } from './generateIngridientsList';
+import { STORAGE_KEY } from './refs';
 
 export async function createModalMarkupCocktail(arrCocktails) {
   // console.log('arrCocktails', arrCocktails);
@@ -28,10 +29,10 @@ export async function createModalMarkupCocktail(arrCocktails) {
         </div>
         <button class="gallery__add-btn btn" data-id="${idDrink}" type="button">
             <span class="add-btn__desr">${
-              checkIdCocktail(idDrink) >= 0 ? 'Remove' : 'Add to'
+              checkIdCocktail(STORAGE_KEY, idDrink) >= 0 ? 'Remove' : 'Add to'
             }</span>
             <svg class="add-btn__icon ${
-              checkIdCocktail(idDrink) >= 0 ? 'icon__fill' : ''
+              checkIdCocktail(STORAGE_KEY, idDrink) >= 0 ? 'icon__fill' : ''
             }" width="18" height="18">
               <use href="${sprite}#icon-empty-heart"></use>
             </svg>
