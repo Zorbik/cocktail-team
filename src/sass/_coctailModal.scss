@@ -173,7 +173,7 @@
 
 .modal__wrapper-instructions {
     @media screen and (min-width: $tablet) {
-        margin-top: 110px;
+        margin-top: 28px;
     }
 }
 
@@ -194,5 +194,10 @@
 .modal__coctail-ingredients-list {
     @media screen and (max-width: $tablet) {
         margin-bottom: 32px;
+    }
+
+    @media screen and (min-width: $tablet) {
+        height: 153px;  
+        overflow-y: scroll;
     }
 }
