@@ -1,5 +1,6 @@
+import { STORAGE_KEY } from './refs';
+
 const galleryEl = document.querySelector('.gallery__list');
-const STORAGE_KEY = 'favorite-cocktails';
 
 galleryEl.addEventListener('click', isFavorite);
 
@@ -17,7 +18,7 @@ export function isFavorite(e) {
   }
 }
 
-function getLocalData() {
+export function getLocalData() {
   return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 }
 
