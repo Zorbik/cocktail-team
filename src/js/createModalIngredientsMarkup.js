@@ -24,7 +24,7 @@ export function createModalMarkupCocktail(arrCocktails) {
     checkIdIngredients(idIngredient) >= 0 ? 'icon-ingredients-fill' : ''
   }
   " data-id="${idIngredient}" type="button">${
-    checkIdIngredients(idIngredient) >= 0 ? 'Remove' : 'Add to'
+    checkIdIngredients(idIngredient) >= 0 ? 'Remove from favorite' : 'Add to favorite'
   }</button>
     `;
 }
