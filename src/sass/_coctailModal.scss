@@ -194,7 +194,7 @@
     overflow-y: scroll;
   }
 }
-
+.modal-ingredient__add-btn,
 .modal__add-btn.coctail {
   @include title-products-style;
   @include font-size(400, 20px, 1.2, 0.02em);

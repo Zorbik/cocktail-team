@@ -12,14 +12,13 @@ export function onClickAddIngredient(e) {
   }
 }
 
-
 export function onAddIngredient(elem) {
   // console.log('Dobavili');
   let arrIngredients = getLocalData(STORAGE_KEY_INGREDIENT);
   arrIngredients.push(elem.dataset.id);
   localStorage.setItem(STORAGE_KEY_INGREDIENT, JSON.stringify(arrIngredients));
   console.log(elem.dataset.id);
-  elem.textContent = 'Remove';
+  elem.textContent = 'Remove from favorite';
   elem.classList.add('icon-ingredients-fill');
 }
 
@@ -32,7 +31,7 @@ export function onRemoveIngredient(elem) {
     arrIngredients.splice(index, 1);
     localStorage.setItem(STORAGE_KEY_INGREDIENT, JSON.stringify(arrIngredients));
   }
-  elem.textContent = 'Add to';
+  elem.textContent = 'Add to favorite';
   elem.classList.remove('icon-ingredients-fill');
 }
 

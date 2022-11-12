@@ -29,7 +29,7 @@ async function onClickBtnInfo(e) {
 
 function onBtnModalClick(e) {
   onButtonCloseModalIngredient(e);
-  if (e.target.closest('.gallery__add-btn')) {
+  if (e.target.closest('.modal-ingredient__add-btn')) {
     onClickBtnAdd(e);
   }
 }
