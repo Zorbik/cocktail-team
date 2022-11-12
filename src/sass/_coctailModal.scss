@@ -13,13 +13,12 @@
     border-radius: 4px;
     z-index: 1;
     background-color: white;
-    
-    max-height: 100vh;
-    overflow-y: scroll;
 
     @media screen and (max-width: $tablet){
         width: 320px;
         padding: 40px 20px;
+        max-height: 100vh;
+        overflow-y: scroll;
     }
 
     @media screen and (min-width: $tablet) {
@@ -200,4 +199,13 @@
         height: 153px;  
         overflow-y: scroll;
     }
+}
+
+.modal__add-btn{
+    position: relative;
+    background-color: $primary-color;
+    // color: $primary-background-color;
+    min-width: 185px;
+    @include title-products-style;
+    @include font-size(400, 20px, 1.2, 0.02em);
 }

@@ -97,6 +97,11 @@
 
 }
 
+// .modal__ingredient-description::-webkit-scrollbar{
+//     width: 10;
+//     height: 10;
+// }
+
 .modal__ingredient-info {
     @include page-titles-style;
     @include font-size(400, 16px, 1.6, 0.02em);
