@@ -1,225 +1,218 @@
 .modal-opened {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
 }
 
 .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: $timing-function;
-    border-radius: 4px;
-    z-index: 1;
-    background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: $timing-function;
+  border-radius: 4px;
+  z-index: 1;
+  background-color: white;
 
-    @media screen and (max-width: $tablet){
-        width: 320px;
-        padding: 40px 20px;
-        max-height: 100vh;
-        overflow-y: scroll;
-    }
+  @media screen and (max-width: $tablet) {
+    width: 320px;
+    padding: 40px 20px;
+    max-height: 100vh;
+    overflow-y: scroll;
+  }
 
-    @media screen and (min-width: $tablet) {
-        width: $tablet;
-        min-height: 598px;
-        padding: 40px 28px 28px;
-    }
+  @media screen and (min-width: $tablet) {
+    width: $tablet;
+    min-height: 598px;
+    padding: 40px 28px 28px;
+  }
 
-    @media screen and (min-width: $desktop) {
-        width: $tablet;
-    }
-
+  @media screen and (min-width: $desktop) {
+    width: $tablet;
+  }
 }
 
-
 .modal__cocktail-close-button {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    background-color: white;
-    border: none;
-    border-radius: 50%;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
 
-    @media screen and (min-width: $tablet) {
-        top: 12px;
-        right: 12px;
-    }
+  @media screen and (min-width: $tablet) {
+    top: 12px;
+    right: 12px;
+  }
 }
 
 .modal.active {
-    transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
 #overlay {
-    position: fixed;
-    opacity: 0;
-    transition: 200ms ease-in-out;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, .5);
-    pointer-events: none;
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
 }
 
 #overlay.active {
-    opacity: 1;
-    pointer-events: all;
+  opacity: 1;
+  pointer-events: all;
 }
 
-
-
 .modal__coctail-button {
-    @include font-size(400, 20px, 1.2, 0.02em);
+  @include font-size(400, 20px, 1.2, 0.02em);
 
-    display: inline-block;
-    min-width: 185px;
-    min-height: 48px;
-    margin-right: 16px;
-    background: $primary-color;
-    border-radius: 4px;
-    text-align: center;
+  display: inline-block;
+  min-width: 185px;
+  min-height: 48px;
+  margin-right: 16px;
+  background: $primary-color;
+  border-radius: 4px;
+  text-align: center;
 
-    color: $primary-background-color;
-    border: 1px solid $primary-color;
+  color: $primary-background-color;
+  border: 1px solid $primary-color;
 
-    @media screen and (min-width: $tablet) {
-        margin-left: 609px;
-    }
+  @media screen and (min-width: $tablet) {
+    margin-left: 609px;
+  }
 }
 
 .modal__coctail-name {
-    @include title-products-style;
-    @include font-size(900, 32px, 1.19, 0.02em);
-    margin-bottom: 20px;
+  @include title-products-style;
+  @include font-size(900, 32px, 1.19, 0.02em);
+  margin-bottom: 20px;
 
-    @media screen and (min-width: $tablet) {
-        margin-left: 320px;
-        margin-bottom: 28px;
-    }
+  @media screen and (min-width: $tablet) {
+    margin-left: 320px;
+    margin-bottom: 28px;
+  }
 }
 
 .modal__coctail-instractions {
-    @include page-titles-style;
-    @include font-size(600, 16px, 1.6, 0.02em);
+  @include page-titles-style;
+  @include font-size(600, 16px, 1.6, 0.02em);
 
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .modal__coctail-description {
-    @include page-titles-style;
-    @include font-size(400, 16px, 1.8, 0.02em);
-    color: $secondary-background-color;
+  @include page-titles-style;
+  @include font-size(400, 16px, 1.8, 0.02em);
+  color: $secondary-background-color;
 
-    @media screen and (max-width: $tablet) {
-        margin-bottom: 30px;
-        // height: 130px;
-        // overflow-y: scroll;
-    }
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 30px;
+    // height: 130px;
+    // overflow-y: scroll;
+  }
 
-    @media screen and (min-width: $tablet) {
-        margin-bottom: 40px;    
-    }
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 40px;
+  }
 }
 
 .modal__coctail-img {
-    border-radius: 4px;
-    @media screen and (max-width: $tablet) {
-        width: 280px;
-        height: 280px;
-        margin-bottom: 24px;
-    }
+  border-radius: 4px;
+  @media screen and (max-width: $tablet) {
+    width: 280px;
+    height: 280px;
+    margin-bottom: 24px;
+  }
 
-    @media screen and (min-width: $tablet) {
-        width: 288px;
-        height: 320px;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+  @media screen and (min-width: $tablet) {
+    width: 288px;
+    height: 320px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 .modal__coctail-ingredients {
-    @include page-titles-style;
-    @include font-size(600, 16px, 1.5, 0.02em);
+  @include page-titles-style;
+  @include font-size(600, 16px, 1.5, 0.02em);
 
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .modal__p {
-    @include page-titles-style;
-    @include font-size(300, 14px, 1.5, 0.02em);
+  @include page-titles-style;
+  @include font-size(300, 14px, 1.5, 0.02em);
 
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .modal__wrapper {
-    @media screen and (min-width: $tablet) {
-        display: flex;
-        flex-direction: column-reverse;
-    }
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 .modal__wrapper-ingredients {
-    @media screen and (min-width: $tablet) {
-        margin-left: 320px;
-    }
+  @media screen and (min-width: $tablet) {
+    margin-left: 320px;
+  }
 }
 
-
-
 .modal__wrapper-instructions {
-    @media screen and (min-width: $tablet) {
-        margin-top: 28px;
-    }
+  @media screen and (min-width: $tablet) {
+    margin-top: 28px;
+  }
 }
 
 .modal__ingredients-item {
-    @include page-titles-style;
-    @include font-size(400, 16px, 1.6, 0.02em);
-    color: $secondary-background-color;
+  @include page-titles-style;
+  @include font-size(400, 16px, 1.6, 0.02em);
+  color: $secondary-background-color;
 }
 
-.modal__ingredient-link{
-    &:hover,
-    &:focus {
-        cursor: pointer;
-        text-decoration: underline;
-    }
+.modal__ingredient-link {
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }
 
 .modal__coctail-ingredients-list {
-    @media screen and (max-width: $tablet) {
-        margin-bottom: 32px;
-    }
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 32px;
+  }
 
-    @media screen and (min-width: $tablet) {
-        height: 153px;  
-        overflow-y: scroll;
-    }
+  @media screen and (min-width: $tablet) {
+    height: 153px;
+    overflow-y: scroll;
+  }
 }
 
-.modal__add-btn{
-    @include title-products-style;
-    @include font-size(400, 20px, 1.2, 0.02em);
+.modal__add-btn.coctail {
+  @include title-products-style;
+  @include font-size(400, 20px, 1.2, 0.02em);
 
-    cursor: pointer;
+  cursor: pointer;
 
-    background-color: $primary-color;
-    color: $primary-background-color;
+  background-color: $primary-color;
+  color: $primary-background-color;
 
-    padding: 12px 24px;
-    min-width: 185px;
-    min-height: 48px;
-    border-radius: 3px;
-    border: none;
+  padding: 12px 24px;
+  min-width: 185px;
+  min-height: 48px;
+  border-radius: 3px;
+  border: none;
 
-    @media screen and (min-width: $tablet) {
-        display: flex;
-        margin-left: auto;
-    }
-
-
+  @media screen and (min-width: $tablet) {
+    position: absolute;
+    right: 28px;
+    bottom: 28px;
+  }
 }
