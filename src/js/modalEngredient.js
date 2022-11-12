@@ -29,7 +29,7 @@ function onModalIngredientsClick(e) {
 }
 
 function onClickAddIngredientBtn(e) {
-  if (!e.target.classList.contains('gallery__add-btn')) return;
+  if (!e.target.classList.contains('modal__add-btn')) return;
   const targetEl = e.target;
   console.log('test', e.target);
   if (e.target.classList.contains('icon-ingredients-fill')) {

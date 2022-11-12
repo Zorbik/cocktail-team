@@ -143,12 +143,12 @@
 
 .gallery__add-btn {
   position: relative;
-  background: $primary-background-color;
+  background-color: $primary-background-color;
   border-radius: 4px;
   color: $primary-color;
   border: 2px solid $primary-color;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  transition: background 250ms $timing-function;
+  transition: background-color 250ms $timing-function;
   @include title-products-style;
   @media screen and(min-width: $tablet) {
     width: 122px;
