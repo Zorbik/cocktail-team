@@ -10,6 +10,7 @@ favoriteCocktailsEl.addEventListener('click', renderFavoriteCocktailsMarkup);
 function generateArrPromiseForFavoriteCocktailsMarkup() {
   let arr = getLocalData(STORAGE_KEY);
   if (!arr.length) return noFoundFavorit();
+
   let arrPromise = [];
 
   for (let i = 0; i < arr.length; i += 1) {
@@ -21,6 +22,8 @@ function generateArrPromiseForFavoriteCocktailsMarkup() {
 
 export async function renderFavoriteCocktailsMarkup() {
   const arrPromise = generateArrPromiseForFavoriteCocktailsMarkup();
+  if (!arrPromise) return;
+  console.log('asdasdasdsadasda', arrPromise);
   const arrCocktails = await Promise.all([...arrPromise]);
   console.log('arrCocktails', arrCocktails);
   const markup = createMarkupCocktail(arrCocktails);

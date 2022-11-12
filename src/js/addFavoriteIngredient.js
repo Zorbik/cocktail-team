@@ -19,8 +19,6 @@ export function onAddIngredient(elem) {
   arrIngredients.push(elem.dataset.id);
   localStorage.setItem(STORAGE_KEY_INGREDIENT, JSON.stringify(arrIngredients));
   console.log(elem.dataset.id);
-
-
   elem.textContent = 'Remove';
   elem.classList.add('icon-ingredients-fill');
 }
