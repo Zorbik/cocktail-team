@@ -53,6 +53,7 @@
   }
 }
 .gallery__desc {
+  height: 60px;
   margin-left: 20px;
   text-align: start;
   @include page-titles-style;
@@ -66,10 +67,10 @@
   }
 }
 .gallery__thumb-ingredient {
-  padding-top:20px;
+  padding-top: 20px;
   padding-bottom: 20px;
   @media screen and (min-width: $tablet) {
-    padding-top:28px;
+    padding-top: 28px;
   }
   @media screen and (min-width: $desktop) {
     padding-bottom: 26px;
