@@ -37,7 +37,7 @@ function onBtnModalClick(e) {
 function onClickBtnAdd(e) {
   if (e.target.classList.contains('icon-ingredients-fill')) {
     onRemoveIngredient(e.target);
-    window.location = window.location.href;
+    location = location.href;
   } else {
     onAddIngredient(e.target);
   }

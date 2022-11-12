@@ -35,8 +35,8 @@ function onRemove(elem) {
   let arrCocktails = getLocalData(STORAGE_KEY);
   const index = checkIdCocktail(STORAGE_KEY, elem.dataset.id);
 
-  if (window.location.pathname === '/favoriteCocktailsPage.html') {
-    window.location = window.location.href;
+  if (location.pathname === '/cocktail-team/favoriteCocktailsPage.html') {
+    location = location.href;
   }
 
   if (index >= 0) {
