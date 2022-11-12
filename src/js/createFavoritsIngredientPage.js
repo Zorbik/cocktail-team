@@ -24,12 +24,20 @@ async function onClickBtnInfo(e) {
   const ingredient = await getIngredientById(e.target.dataset.id);
   modalIngredientEl.innerHTML = createModalMarkupCocktail(ingredient);
 
-  modalIngredientEl.addEventListener('click', onButtonCloseModalIngredient);
+  modalIngredientEl.addEventListener('click', onBtnModalClick);
+}
+
+function onBtnModalClick(e) {
+  onButtonCloseModalIngredient(e);
+  if (e.target.closest('.gallery__add-btn')) {
+    onClickBtnAdd(e);
+  }
 }
 
 function onClickBtnAdd(e) {
   if (e.target.classList.contains('icon-ingredients-fill')) {
     onRemoveIngredient(e.target);
+    document.location.href = '../favoriteIngredientsPage.html';
   } else {
     onAddIngredient(e.target);
   }
@@ -53,6 +61,7 @@ function generateArrPromiseForFavoriteIngredientMarkup() {
 
 export async function renderFavoriteIngredientMarkup() {
   const arrPromise = generateArrPromiseForFavoriteIngredientMarkup();
+  if (!arrPromise) return;
   const arrIngredient = await Promise.all([...arrPromise]);
   console.log('arrIngredient', arrIngredient);
   const markup = createMarkupIngredients(arrIngredient);

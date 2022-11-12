@@ -16,7 +16,7 @@ export async function onClickIngredient(e) {
   const ingredient = await getIngredientsByName(`${e.target.dataset.ingredient}`);
   // console.log(ingredient);
 
-  const markup = await createModalMarkupCocktail(ingredient);
+  const markup = createModalMarkupCocktail(ingredient);
   modalIngredientEl.innerHTML = markup;
 
   modalIngredientEl.addEventListener('click', onModalIngredientsClick);
