@@ -202,10 +202,24 @@
 }
 
 .modal__add-btn{
-    position: relative;
-    background-color: $primary-color;
-    // color: $primary-background-color;
-    min-width: 185px;
     @include title-products-style;
     @include font-size(400, 20px, 1.2, 0.02em);
+
+    cursor: pointer;
+
+    background-color: $primary-color;
+    color: $primary-background-color;
+
+    padding: 12px 24px;
+    min-width: 185px;
+    min-height: 48px;
+    border-radius: 3px;
+    border: none;
+
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        margin-left: auto;
+    }
+
+
 }
