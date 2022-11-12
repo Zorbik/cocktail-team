@@ -27,7 +27,7 @@ export async function createModalMarkupCocktail(arrCocktails) {
         <ul class="modal__coctail-ingredients-list">${list}</ul>
         </div>
         </div>
-        <button class="btn modal__add-btn ${
+        <button class=" modal__add-btn ${
           checkIdCocktail(STORAGE_KEY, idDrink) >= 0 ? 'btn-added' : ''
         }" data-id="${idDrink}" type="button">
             ${
