@@ -149,7 +149,7 @@
   border: 2px solid $primary-color;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   transition: background 250ms $timing-function;
-
+  @include title-products-style;
   @media screen and(min-width: $tablet) {
     width: 122px;
     height: 48px;
@@ -182,13 +182,13 @@
   left: 72px;
 
   @media screen and(min-width: $tablet) {
-    left: 84px;
+    left: 87px;
     width: 24px;
     height: 24px;
   }
 
   @media screen and(min-width: $desktop) {
-    left: 96px;
+    left: 98px;
   }
 
   fill: $primary-background-color;
