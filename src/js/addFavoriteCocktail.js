@@ -34,15 +34,15 @@ function onAdd(elem) {
 function onRemove(elem) {
   let arrCocktails = getLocalData(STORAGE_KEY);
   const index = checkIdCocktail(STORAGE_KEY, elem.dataset.id);
+
+  if (window.location.pathname === '/favoriteCocktailsPage.html') {
+    window.location = window.location.href;
+  }
+
   if (index >= 0) {
     arrCocktails.splice(index, 1);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(arrCocktails));
   }
-  // const asda = document.location.href === '../favoriteCocktailsPage.html';
-  // console.log(asda);
-  // if (document.location.href === './favoriteCocktailsPage.html') {
-  //   document.location.href = './favoriteCocktailsPage.html';
-  // }
 
   elem.firstElementChild.textContent = 'Add to';
   elem.lastElementChild.classList.remove('icon__fill');
