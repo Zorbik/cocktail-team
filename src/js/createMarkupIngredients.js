@@ -12,8 +12,8 @@ export function createMarkupIngredients(array) {
           <p class="gallery__ingredient">${strIngredient}</p>
           <p class="gallery__desc">${strType ? strType : ''}</p>
           <div class="ingredient-info gallery__thumb">
-          <button class="ingredient-info__btn-info btn" data-id="${idIngredient}" type="button" data-modal-target="#modal">Learn more</button>
-          <button class="ingredient-info__btn-add btn ${
+          <button class="ingredient-info__btn-info btn gallery__info-btn-ingredient" data-id="${idIngredient}" type="button" data-modal-target="#modal">Learn more</button>
+          <button class="gallery__remove-btn-ingredient ingredient-info__btn-add btn ${
             checkIdIngredients(idIngredient) >= 0 ? 'icon-ingredients-fill' : ''
           }" data-id="${idIngredient}" type="button">
            ${checkIdCocktail(STORAGE_KEY_INGREDIENT, idIngredient) >= 0 ? 'Remove' : 'Add to'}
