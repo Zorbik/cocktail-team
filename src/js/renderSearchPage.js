@@ -24,6 +24,8 @@ function createPagArray(page) {
   if (page > countPage) return;
   const tempArray = [...paginationArray];
   let markup;
+  console.log('window.location.pathname', window.location.pathname);
+
   if (window.location.pathname === '/favoriteIngredientsPage.html') {
     markup = createMarkupIngredients(tempArray.splice((page - 1) * cardsPerPage, cardsPerPage));
   } else {
