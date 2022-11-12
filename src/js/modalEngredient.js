@@ -1,7 +1,8 @@
 import { getIngredientsByName } from './request-api';
 import { createModalMarkupCocktail } from './createModalIngredientsMarkup';
-import { onClickAddIngredient } from './addFavoriteIngredient';
-import { modalIngredientEl, overlayIngredient } from './refs';
+import { modalIngredientEl, overlayIngredient, STORAGE_KEY_INGREDIENT } from './refs';
+import { checkIdIngredients } from './addFavoriteIngredient';
+import { getLocalData } from './addFavoriteCocktail';
 
 overlayIngredient.addEventListener('click', onOverlayIngredientClick);
 
@@ -24,11 +25,41 @@ export async function onClickIngredient(e) {
 
 function onModalIngredientsClick(e) {
   onButtonCloseModalIngredient(e);
-  onButtonAddModalIngredient(e);
+  onClickAddIngredientBtn(e);
 }
 
-function onButtonAddModalIngredient(e) {
-  onClickAddIngredient(e);
+function onClickAddIngredientBtn(e) {
+  if (!e.target.classList.contains('gallery__add-btn')) return;
+  const targetEl = e.target;
+  console.log('test', e.target);
+  if (e.target.classList.contains('icon-ingredients-fill')) {
+    onModalRemoveIngredient(targetEl);
+  } else {
+    onModalAddIngredient(targetEl);
+  }
+}
+
+function onModalAddIngredient(elem) {
+  // console.log('Dobavili');
+  let arrIngredients = getLocalData(STORAGE_KEY_INGREDIENT);
+  arrIngredients.push(elem.dataset.id);
+  localStorage.setItem(STORAGE_KEY_INGREDIENT, JSON.stringify(arrIngredients));
+  console.log(elem.dataset.id);
+  elem.textContent = 'Remove from favorite';
+  elem.classList.add('icon-ingredients-fill');
+}
+
+function onModalRemoveIngredient(elem) {
+  // console.log('Udalili');
+  let arrIngredients = getLocalData(STORAGE_KEY_INGREDIENT);
+
+  const index = checkIdIngredients(elem.dataset.id);
+  if (index >= 0) {
+    arrIngredients.splice(index, 1);
+    localStorage.setItem(STORAGE_KEY_INGREDIENT, JSON.stringify(arrIngredients));
+  }
+  elem.textContent = 'Add to favorite';
+  elem.classList.remove('icon-ingredients-fill');
 }
 
 export function onButtonCloseModalIngredient(e) {
@@ -48,5 +79,5 @@ function closeIngredientModal() {
   modalIngredientEl.classList.remove('active');
   overlayIngredient.classList.remove('active');
   // body.classList.toggle('modal-opened');
-  // removeEventListener('click', onClickModal);
+  removeEventListener('click', onModalIngredientsClick);
 }
