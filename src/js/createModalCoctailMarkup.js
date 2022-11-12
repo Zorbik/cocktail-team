@@ -27,15 +27,14 @@ export async function createModalMarkupCocktail(arrCocktails) {
         <ul class="modal__coctail-ingredients-list">${list}</ul>
         </div>
         </div>
-        <button class="gallery__add-btn btn" data-id="${idDrink}" type="button">
-            <span class="add-btn__desr">${
-              checkIdCocktail(STORAGE_KEY, idDrink) >= 0 ? 'Remove' : 'Add to'
-            }</span>
-            <svg class="add-btn__icon ${
-              checkIdCocktail(STORAGE_KEY, idDrink) >= 0 ? 'icon__fill' : ''
-            }" width="18" height="18">
-              <use href="${sprite}#icon-empty-heart"></use>
-            </svg>
+        <button class="btn modal__add-btn ${
+          checkIdCocktail(STORAGE_KEY, idDrink) >= 0 ? 'btn-added' : ''
+        }" data-id="${idDrink}" type="button">
+            ${
+              checkIdCocktail(STORAGE_KEY, idDrink) >= 0
+                ? 'Remove from favorite'
+                : 'Add to favorite'
+            }
         </button>
     `;
 }
