@@ -37,7 +37,7 @@ function onBtnModalClick(e) {
 function onClickBtnAdd(e) {
   if (e.target.classList.contains('icon-ingredients-fill')) {
     onRemoveIngredient(e.target);
-    document.location.href = '../favoriteIngredientsPage.html';
+    window.location = window.location.href;
   } else {
     onAddIngredient(e.target);
   }
