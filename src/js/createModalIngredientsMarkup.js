@@ -20,7 +20,7 @@ export function createModalMarkupCocktail(arrCocktails) {
   <ul class="modal__ingredient-info">
     <li>✶ <span modal__ingredient-item>Alcohol: ${strAlcohol ? strAlcohol : ''}</span></li>
   </ul>
-  <button class="modal__add-btn btn ${
+  <button class="modal-ingredient__add-btn btn ${
     checkIdIngredients(idIngredient) >= 0 ? 'icon-ingredients-fill' : ''
   }
   " data-id="${idIngredient}" type="button">${
