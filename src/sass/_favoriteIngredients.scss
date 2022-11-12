@@ -1,67 +1,78 @@
-.title_ingredients,
-.title_cocktails {
-  margin-top: 40px;
-  margin-bottom: 60px;
-  @include page-titles-style;
-  @include font-size(600, 22px, 1.9);
-  text-align: center;
-  color: $text-color;
-  @media screen and (min-width: $tablet) {
-    margin-top: 20px;
-    margin-bottom: 75px;
-    @include title-products-style;
-    @include font-size(700, 32px, 1.19);
-  }
-  @media screen and (min-width: $desktop) {
-    margin-top: 32px;
-    margin-bottom: 60px;
-    @include page-titles-style;
-    @include font-size(700, 48px, 1.5);
-  }
-}
-.gallery__list__ingredient {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+// .title_ingredients,
+// .title_cocktails {
+//   margin-top: 40px;
+//   margin-bottom: 60px;
+//   @include page-titles-style;
+//   @include font-size(600, 22px, 1.9);
+//   text-align: center;
+//   color: $text-color;
+//   @media screen and (min-width: $tablet) {
+//     margin-top: 20px;
+//     margin-bottom: 75px;
+//     @include title-products-style;
+//     @include font-size(700, 32px, 1.19);
+//   }
+//   @media screen and (min-width: $desktop) {
+//     margin-top: 32px;
+//     margin-bottom: 60px;
+//     @include page-titles-style;
+//     @include font-size(700, 48px, 1.5);
+//   }
+// }
+// .gallery__list__ingredient {
+//   display: flex;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   gap: 20px;
 
-  @media screen and(min-width: $tablet) {
-    gap: 32px;
-  }
+//   @media screen and(min-width: $tablet) {
+//     gap: 32px;
+//   }
 
-  @media screen and(min-width: $desktop) {
-    margin-left: -17px;
-    margin-right: -17px;
-  }
-}
+//   @media screen and(min-width: $desktop) {
+//     margin-left: -17px;
+//     margin-right: -17px;
+//   }
+// }
 .gallery__ingredient {
   margin: 20px;
   @include title-products-style;
   @include font-size(900, 26px, 1.61);
   color: $text-color;
+  text-align: start;
   @media screen and (min-width: $tablet) {
     margin-bottom: 28px;
     @include font-size(900, 28px, 1.18);
     color: #000000;
   }
   @media screen and (min-width: $desktop) {
-    margin-top: 32px;
-    margin-bottom: 60px;
+    margin-top: 30px;
+    margin-left: 28px;
     @include font-size(900, 32px, 1.19);
     color: $text-color;
   }
 }
 .gallery__desc {
   margin-left: 20px;
-  height: 30px;
+  text-align: start;
   @include page-titles-style;
   @include font-size(600, 14px, 1.5);
   text-transform: uppercase;
   color: #000000;
   @media screen and (min-width: $tablet) {
-    margin-bottom: 20px;
+    margin-left: 28px;
     @include font-size(600, 16px, 1.5);
     color: $secondary-background-color;
+  }
+}
+.gallery__thumb-ingredient {
+  padding-top:20px;
+  padding-bottom: 20px;
+  @media screen and (min-width: $tablet) {
+    padding-top:28px;
+  }
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 26px;
   }
 }
 .gallery__info-btn-ingredient {
@@ -101,6 +112,8 @@
   @media screen and(min-width: $tablet) {
     width: 122px;
     height: 48px;
+    padding-right: 39px;
+    padding-left: 10px;
     @include font-size(400, 20px, 1.2, 0.02em);
   }
 
@@ -109,3 +122,9 @@
     @include font-size(400, 20px, 1.2, 0.02em);
   }
 }
+// .gallery__item-ingredient {
+//   padding: 20px;
+//   @media screen and(min-width: $desktop) {
+//     padding: 30px 28px 26px 30px;
+//   }
+// }
