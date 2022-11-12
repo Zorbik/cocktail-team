@@ -1,4 +1,5 @@
 import { createMarkupCocktail } from './createMarkupCocktail';
+import { createMarkupIngredients } from './createMarkupIngredients';
 import { gallery, elem } from './refs';
 import { amountCards } from './renderStartMarkup';
 
@@ -19,16 +20,22 @@ export function pagination(array) {
   createPagArray(page);
 }
 
-export function createPagArray(page) {
+function createPagArray(page) {
   if (page > countPage) return;
   const tempArray = [...paginationArray];
-  gallery.innerHTML = createMarkupCocktail(
-    tempArray.splice((page - 1) * cardsPerPage, cardsPerPage)
-  );
+  let markup;
+  if (window.location.pathname === '/favoriteIngredientsPage.html') {
+    markup = createMarkupIngredients(tempArray.splice((page - 1) * cardsPerPage, cardsPerPage));
+  } else {
+    markup = createMarkupCocktail(tempArray.splice((page - 1) * cardsPerPage, cardsPerPage));
+  }
+
+  gallery.innerHTML = markup;
+
   renderNumPagesGallery(page);
 }
 
-export function renderNumPagesGallery(currentPage) {
+function renderNumPagesGallery(currentPage) {
   let markup = `<span class="decr-arrow" data-action="decrement" ${
     currentPage === 1 ? 'style="display: none;"' : ''
   }></span>`;

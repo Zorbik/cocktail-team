@@ -2,6 +2,7 @@ import { getCocktailById } from './request-api';
 import { createMarkupCocktail } from './createMarkupCocktail';
 import { elem, gallery, STORAGE_KEY } from './refs';
 import { getLocalData } from './addFavoriteCocktail';
+import { pagination } from './renderSearchPage';
 
 const favoriteCocktailsEl = document.querySelector('.js-favorite-cocktails');
 
@@ -26,8 +27,8 @@ export async function renderFavoriteCocktailsMarkup() {
   console.log('asdasdasdsadasda', arrPromise);
   const arrCocktails = await Promise.all([...arrPromise]);
   console.log('arrCocktails', arrCocktails);
-  const markup = createMarkupCocktail(arrCocktails);
-  gallery.innerHTML = markup;
+  pagination(arrCocktails);
+
   elem.firstElementChild.textContent = 'Favorite Cocktails';
 }
 

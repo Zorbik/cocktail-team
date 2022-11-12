@@ -2,10 +2,10 @@ import { elem, gallery, STORAGE_KEY_INGREDIENT, modalIngredientEl } from './refs
 import { getIngredientById } from './request-api';
 import { createMarkupIngredients } from './createMarkupIngredients';
 import { getLocalData } from './addFavoriteCocktail';
-import { openIngredientModal } from './modalEngredient';
 import { onAddIngredient, onRemoveIngredient } from './addFavoriteIngredient';
 import { openIngredientModal, onButtonCloseModalIngredient } from './modalEngredient';
 import { createModalMarkupCocktail } from './createModalIngredientsMarkup';
+import { pagination } from './renderSearchPage';
 
 gallery.addEventListener('click', onClickBtns);
 
@@ -64,7 +64,8 @@ export async function renderFavoriteIngredientMarkup() {
   if (!arrPromise) return;
   const arrIngredient = await Promise.all([...arrPromise]);
   console.log('arrIngredient', arrIngredient);
-  const markup = createMarkupIngredients(arrIngredient);
-  gallery.innerHTML = markup;
+
+  pagination(arrIngredient);
+
   elem.firstElementChild.textContent = 'Favorite Ingredients';
 }
