@@ -1,10 +1,10 @@
 import { getCocktailByLetter } from './request-api';
 import { isFind, noFoundData } from './header/headerSearchByName';
 import { pagination } from './renderSearchPage';
+import { heroSearchCoctailsEl, heroListEl } from './refs';
 
-const heroListEl = document.querySelector('.hero_list');
 const heroSelectEl = document.querySelector('.hero_select');
-const heroSearchCoctailsEl = document.querySelector('.hero_search_coctails');
+
 
 heroSearchCoctailsEl.addEventListener('click', e => {
   heroSearchCoctailsEl.classList.toggle('js_hero_search');

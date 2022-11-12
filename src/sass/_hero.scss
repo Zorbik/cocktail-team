@@ -155,3 +155,7 @@
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
+.hero_item_hidden {
+    opacity: 0;
+    pointer-events: none;
+}

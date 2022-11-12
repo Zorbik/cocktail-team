@@ -1,7 +1,7 @@
 import { getCocktailByName } from '../request-api';
 import nofound from '../../images/nofound.png';
 import { menu } from './header-mobile';
-import { elem, gallery } from '../refs';
+import { elem, gallery, heroSearchCoctailsEl, heroListEl } from '../refs';
 import { pagination } from '../renderSearchPage';
 
 const formSubmitMob = document.querySelector('#search-form-mob');
@@ -14,11 +14,18 @@ function onSubmitMob(e) {
   e.preventDefault();
   searchQuery(e);
   menu();
+  heroSearchCoctailsEl.classList.remove('js_hero_active');
+  if (heroListEl.querySelector('.js_hero_item')) {
+    heroListEl.querySelector('.js_hero_item').classList.remove('js_hero_item');
+  }
 }
 
 function onSubmit(e) {
   e.preventDefault();
   searchQuery(e);
+  if (heroListEl.querySelector('.js_hero_item')) {
+    heroListEl.querySelector('.js_hero_item').classList.remove('js_hero_item');
+  }
 }
 
 async function searchQuery(e) {
