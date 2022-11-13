@@ -31,7 +31,11 @@ export function onRemoveIngredient(elem) {
     arrIngredients.splice(index, 1);
     localStorage.setItem(STORAGE_KEY_INGREDIENT, JSON.stringify(arrIngredients));
   }
-  elem.textContent = 'Add to favorite';
+
+  elem.textContent = elem.classList.contains('gallery__remove-btn-ingredient')
+    ? 'Add to'
+    : 'Add to favorite';
+
   elem.classList.remove('icon-ingredients-fill');
 }
 
