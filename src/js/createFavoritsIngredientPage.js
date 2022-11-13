@@ -36,7 +36,11 @@ function onBtnModalClick(e) {
 function onClickBtnAdd(e) {
   if (e.target.classList.contains('icon-ingredients-fill')) {
     onRemoveIngredient(e.target);
-    location.reload();
+    e.target.closest('li').remove();
+    if (!getLocalData(STORAGE_KEY_INGREDIENT).length) {
+      generateArrPromiseForFavoriteIngredientMarkup();
+      elem.lastElementChild.innerHTML = '';
+    }
   } else {
     onAddIngredient(e.target);
   }

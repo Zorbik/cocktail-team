@@ -76,6 +76,7 @@ export function openIngredientModal() {
 function closeIngredientModal() {
   modalIngredientEl.classList.remove('active');
   overlayIngredient.classList.remove('active');
+  modalIngredientEl.innerHTML = '';
   // body.classList.toggle('modal-opened');
   removeEventListener('click', onModalIngredientsClick);
 }

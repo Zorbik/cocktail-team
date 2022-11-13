@@ -23,11 +23,12 @@ export async function renderFavoriteCocktailsMarkup() {
   const arrPromise = generateArrPromiseForFavoriteCocktailsMarkup();
   if (!arrPromise) return;
   const arrCocktails = await Promise.all([...arrPromise]);
+
   pagination(arrCocktails);
 
   elem.firstElementChild.textContent = 'Favorite Cocktails';
 }
 
-function noFoundFavorit() {
+export function noFoundFavorit() {
   gallery.textContent = `You haven't added any favorite cocktails yet`;
 }

@@ -1,4 +1,5 @@
-import { STORAGE_KEY } from './refs';
+import { STORAGE_KEY, elem } from './refs';
+import { noFoundFavorit } from './createFavoritesPage';
 
 const galleryEl = document.querySelector('.gallery__list');
 
@@ -22,20 +23,25 @@ export function getLocalData(key) {
   return JSON.parse(localStorage.getItem(key)) || [];
 }
 
-function onAdd(elem) {
+function onAdd(el) {
   let arrCocktails = getLocalData(STORAGE_KEY);
-  arrCocktails.push(elem.dataset.id);
+  arrCocktails.push(el.dataset.id);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(arrCocktails));
-  elem.firstElementChild.textContent = 'Remove';
-  elem.lastElementChild.classList.add('icon__fill');
+  el.firstElementChild.textContent = 'Remove';
+  el.lastElementChild.classList.add('icon__fill');
 }
 
-function onRemove(elem) {
+function onRemove(el) {
   let arrCocktails = getLocalData(STORAGE_KEY);
-  const index = checkIdCocktail(STORAGE_KEY, elem.dataset.id);
+  const index = checkIdCocktail(STORAGE_KEY, el.dataset.id);
 
   if (location.pathname === '/cocktail-team/favoriteCocktailsPage.html') {
-    location.reload();
+    el.closest('li').remove();
+
+    if (getLocalData(STORAGE_KEY).length === 1) {
+      noFoundFavorit();
+      elem.lastElementChild.innerHTML = '';
+    }
   }
 
   if (index >= 0) {
@@ -43,8 +49,8 @@ function onRemove(elem) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(arrCocktails));
   }
 
-  elem.firstElementChild.textContent = 'Add to';
-  elem.lastElementChild.classList.remove('icon__fill');
+  el.firstElementChild.textContent = 'Add to';
+  el.lastElementChild.classList.remove('icon__fill');
 }
 
 export function checkIdCocktail(key, id) {

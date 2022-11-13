@@ -94,6 +94,7 @@ function openModal() {
 function closeModal() {
   modalCardEl.classList.remove('active');
   overlay.classList.remove('active');
+  modalCardEl.innerHTML = '';
   body.classList.toggle('modal-opened');
   removeEventListener('click', onClickModal);
 }
