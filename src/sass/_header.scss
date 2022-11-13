@@ -1,4 +1,4 @@
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: $tablet) {
   .navigation {
     display: none;
   }
@@ -75,7 +75,7 @@
   }
 }
 
-@media screen and (min-width: $mobile) and (max-width: $desktop) {
+@media screen and (min-width: $tablet) and (max-width: $desktop) {
   .navigation {
     display: none;
   }
