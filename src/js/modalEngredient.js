@@ -31,7 +31,6 @@ function onModalIngredientsClick(e) {
 function onClickAddIngredientBtn(e) {
   if (!e.target.classList.contains('modal-ingredient__add-btn')) return;
   const targetEl = e.target;
-  console.log('test', e.target);
   if (e.target.classList.contains('icon-ingredients-fill')) {
     onModalRemoveIngredient(targetEl);
   } else {
@@ -44,7 +43,6 @@ function onModalAddIngredient(elem) {
   let arrIngredients = getLocalData(STORAGE_KEY_INGREDIENT);
   arrIngredients.push(elem.dataset.id);
   localStorage.setItem(STORAGE_KEY_INGREDIENT, JSON.stringify(arrIngredients));
-  console.log(elem.dataset.id);
   elem.textContent = 'Remove from favorite';
   elem.classList.add('icon-ingredients-fill');
 }

@@ -5,7 +5,6 @@ import { heroSearchCoctailsEl, heroListEl } from './refs';
 
 const heroSelectEl = document.querySelector('.hero_select');
 
-
 heroSearchCoctailsEl.addEventListener('click', e => {
   heroSearchCoctailsEl.classList.toggle('js_hero_search');
 });
@@ -21,7 +20,6 @@ export async function onClickLetter(e) {
     }
     e.target.classList.add('js_hero_item');
     const coctailsByLetter = await getCocktailByLetter(e.target.textContent);
-    console.log(coctailsByLetter);
     isFind(coctailsByLetter.drinks);
     if (!coctailsByLetter.drinks) {
       noFoundData(coctailsByLetter.drinks);

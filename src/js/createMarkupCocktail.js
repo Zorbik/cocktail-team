@@ -3,7 +3,6 @@ import { checkIdCocktail } from './addFavoriteCocktail';
 import { STORAGE_KEY } from './refs';
 
 export function createMarkupCocktail(arrCocktails) {
-  console.log(arrCocktails);
   return arrCocktails
     .map(({ strDrinkThumb, strDrink, idDrink }) => {
       return `

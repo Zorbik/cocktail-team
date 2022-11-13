@@ -1,6 +1,5 @@
 import { elem, gallery, STORAGE_KEY_INGREDIENT, modalIngredientEl } from './refs';
 import { getIngredientById } from './request-api';
-import { createMarkupIngredients } from './createMarkupIngredients';
 import { getLocalData } from './addFavoriteCocktail';
 import { onAddIngredient, onRemoveIngredient } from './addFavoriteIngredient';
 import { openIngredientModal, onButtonCloseModalIngredient } from './modalEngredient';
@@ -53,9 +52,7 @@ function generateArrPromiseForFavoriteIngredientMarkup() {
 
   for (let i = 0; i < arr.length; i += 1) {
     arrPromise.push(getIngredientById(arr[i]));
-    console.log('arrPromise', arrPromise);
   }
-  console.log('arrPromise', arrPromise);
   return arrPromise;
 }
 
@@ -63,7 +60,6 @@ export async function renderFavoriteIngredientMarkup() {
   const arrPromise = generateArrPromiseForFavoriteIngredientMarkup();
   if (!arrPromise) return;
   const arrIngredient = await Promise.all([...arrPromise]);
-  console.log('arrIngredient', arrIngredient);
 
   pagination(arrIngredient);
 

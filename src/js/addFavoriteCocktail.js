@@ -36,7 +36,7 @@ function onRemove(elem) {
   const index = checkIdCocktail(STORAGE_KEY, elem.dataset.id);
 
   if (location.pathname === '/cocktail-team/favoriteCocktailsPage.html') {
-    location = location.href;
+    location.reload();
   }
 
   if (index >= 0) {

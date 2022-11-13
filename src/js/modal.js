@@ -22,7 +22,6 @@ async function onGalleryClick(e) {
   }
   openModal(modalCardEl);
 
-  console.log('123', e.target.dataset.id);
   const coctail = await getCocktailById(e.target.dataset.id);
 
   const markup = await createModalMarkupCocktail(coctail);
@@ -34,7 +33,6 @@ async function onGalleryClick(e) {
 
 function isFavoriteCoctail(e) {
   const targetEl = e.target.closest('.modal__add-btn');
-  console.log('etarget', e.target);
 
   if (!targetEl) {
     return;
@@ -51,7 +49,6 @@ function onAddFavorite(elem) {
   let arrCocktails = getLocalData(STORAGE_KEY);
   arrCocktails.push(elem.dataset.id);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(arrCocktails));
-  console.log(elem.dataset.id);
   elem.textContent = 'Remove from favorite';
   elem.classList.add('btn-added');
 }
