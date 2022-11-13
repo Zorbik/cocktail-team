@@ -26,7 +26,6 @@ function onAdd(elem) {
   let arrCocktails = getLocalData(STORAGE_KEY);
   arrCocktails.push(elem.dataset.id);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(arrCocktails));
-  console.log(elem.dataset.id);
   elem.firstElementChild.textContent = 'Remove';
   elem.lastElementChild.classList.add('icon__fill');
 }
