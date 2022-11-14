@@ -35,7 +35,10 @@ function onRemove(el) {
   let arrCocktails = getLocalData(STORAGE_KEY);
   const index = checkIdCocktail(STORAGE_KEY, el.dataset.id);
 
-  if (location.pathname === '/cocktail-team/favoriteCocktailsPage.html') {
+  if (
+    location.pathname === '/cocktail-team/favoriteCocktailsPage.html' ||
+    location.pathname === '/favoriteCocktailsPage.html'
+  ) {
     el.closest('li').remove();
 
     if (getLocalData(STORAGE_KEY).length === 1) {
