@@ -203,6 +203,11 @@
 
   background-color: $primary-color;
   color: $primary-background-color;
+  transition: 250ms $timing-function;
+  
+  &:hover {
+    background-color: $primary-color-hover;
+  }
 
   padding: 12px 24px;
   min-width: 185px;
