@@ -25,7 +25,10 @@ function createPagArray(page) {
   const tempArray = [...paginationArray];
   let markup;
 
-  if (location.pathname === '/cocktail-team/favoriteIngredientsPage.html') {
+  if (
+    location.pathname === '/cocktail-team/favoriteIngredientsPage.html' ||
+    location.pathname === '/favoriteIngredientsPage.html'
+  ) {
     markup = createMarkupIngredients(tempArray.splice((page - 1) * cardsPerPage, cardsPerPage));
   } else {
     markup = createMarkupCocktail(tempArray.splice((page - 1) * cardsPerPage, cardsPerPage));
