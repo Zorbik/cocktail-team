@@ -49,7 +49,7 @@ function onClickBtnAdd(e) {
 function generateArrPromiseForFavoriteIngredientMarkup() {
   let arr = getLocalData(STORAGE_KEY_INGREDIENT);
   if (!arr.length) {
-    gallery.textContent = `You haven't added any favorite ingridients yet`;
+    gallery.innerHTML = `<li class="nf"> You haven't added any favorite ingridients yet </li>`;
     return;
   }
   let arrPromise = [];

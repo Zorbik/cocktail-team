@@ -30,5 +30,5 @@ export async function renderFavoriteCocktailsMarkup() {
 }
 
 export function noFoundFavorit() {
-  gallery.textContent = `You haven't added any favorite cocktails yet`;
+  gallery.innerHTML = `<li class="nf"> You haven't added any favorite cocktails yet </li>`;
 }

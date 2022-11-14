@@ -100,3 +100,7 @@
     @include font-size(400, 20px, 1.2, 0.02em);
   }
 }
+
+.nf {
+  max-width: 500px;
+}
